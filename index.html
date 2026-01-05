@@ -136,6 +136,13 @@
       display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
       padding: 0 6px;
     }
+    footer a{
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    footer a:hover{
+      border-bottom-color: rgba(255,255,255,.45);
+    }
 
     @media (max-width: 820px){
       .card{grid-column: span 12;}
@@ -166,12 +173,6 @@
         <a class="btn primary disabled" href="#" aria-disabled="true" title="Coming soon">
           Gumroad · Coming soon
         </a>
-
-        <!-- Optional: keep the link already, but still show coming soon (uncomment when you have it)
-        <a class="btn primary" href="YOUR_GUMROAD_URL" target="_blank" rel="noopener">
-          Gumroad · Coming soon
-        </a>
-        -->
 
         <a class="btn" href="mailto:HyperRAW.app@gmail.com">
           Contact: HyperRAW.app@gmail.com
@@ -210,7 +211,9 @@
 
     <footer>
       <div>© HyperRAW</div>
-      <div class="small">Last updated: <span class="mono">2026-01-05</span></div>
+      <div class="small">
+        <a href="impressum.html">Impressum</a>
+      </div>
     </footer>
   </div>
 </body>
