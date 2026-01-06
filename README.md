@@ -12,3 +12,13 @@ Planned:
 - Additional RAW formats (e.g. RED)
 
 Distribution and licensing are handled externally.
+
+## Third-Party Components
+
+This project supports Blackmagic RAW via the Blackmagic RAW SDK.
+
+Blackmagic RAW® is a registered trademark of Blackmagic Design Pty. Ltd.
+This project is not affiliated with or endorsed by Blackmagic Design.
+
+Due to licensing restrictions, the Blackmagic RAW SDK and its binaries
+are not included in this repository.
