@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HyperRAW - FAQ</title>
+  <meta name="description"
+      content="Frequently asked questions about HyperRAW: workflow, performance, GPU support, formats, licensing, and roadmap.">
+<meta name="author" content="HyperRAW">
+  <meta name="robots" content="index,follow">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="HyperRAW logo.png">
+  <link rel="apple-touch-icon" href="HyperRAW logo.png">
+  <style>
+
+    :root{
+      --bg:#0b0d12;
+      --panel:#111626;
+      --panel2:#0f1423;
+      --text:#e8ecff;
+      --muted:#a9b2d6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --accent2:#37d6ff;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --r:18px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(124,92,255,.18), transparent 55%),
+        radial-gradient(800px 500px at 90% 10%, rgba(55,214,255,.14), transparent 50%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 2px 28px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(55,214,255,.85));
+      box-shadow: 0 10px 20px rgba(124,92,255,.18);
+    }
+    .brand b{letter-spacing:.3px}
+    .chip{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero{
+      padding:28px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+    }
+    h1{
+      margin:0 0 8px;
+      font-size: clamp(30px, 4vw, 44px);
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size: 15px;
+      max-width: 68ch;
+    }
+    .row{
+      display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      border-radius: 14px;
+      padding: 12px 14px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      background: rgba(255,255,255,.03);
+      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: rgba(124,92,255,.55);
+      background: linear-gradient(135deg, rgba(124,92,255,.32), rgba(55,214,255,.18));
+    }
+    .btn.primary:hover{border-color: rgba(124,92,255,.80)}
+    .btn.disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
+    .hint{color:var(--muted); font-size:13px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    .card{
+      grid-column: span 4;
+      padding:16px;
+      border-radius: var(--r);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(17,22,38,.85), rgba(15,20,35,.85));
+      box-shadow: 0 10px 24px rgba(0,0,0,.28);
+      min-height: 110px;
+    }
+    .card h3{margin:0 0 6px; font-size:14px}
+    .card p{margin:0; color:var(--muted); font-size:13px}
+
+    .section{
+      margin-top:16px;
+      padding:18px;
+      border-radius: var(--r);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .small{font-size:13px; color:var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.95;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+      padding: 0 6px;
+    }
+    footer a{
+      text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    footer a:hover{
+      border-bottom-color: rgba(255,255,255,.45);
+    }
+
+    @media (max-width: 820px){
+      .card{grid-column: span 12;}
+      .hero{padding:20px}
+    }
+  
+
+    /* FAQ (details/summary accordion) */
+    details.faq{
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(17,22,38,.85), rgba(15,20,35,.85));
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      padding: 10px 12px;
+      margin: 10px 0;
+    }
+    details.faq[open]{border-color: rgba(255,255,255,.16);}
+    details.faq summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:600;
+      font-size:14px;
+      outline:none;
+      user-select:none;
+    }
+    details.faq summary::-webkit-details-marker{display:none;}
+    details.faq summary:after{
+      content:"+";
+      float:right;
+      color: var(--muted);
+      font-weight:700;
+    }
+    details.faq[open] summary:after{content:"–";}
+    .faq-content{
+      margin-top:8px;
+      color: var(--muted);
+      font-size:13px;
+    }
+    .faq-content ul{margin:8px 0 0 18px; padding:0;}
+    .faq-content li{margin:6px 0;}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"><img src="HyperRAW logo.png" alt="HyperRAW logo" width="34"></span>
+        <b>HyperRAW</b>
+      </a>
+      <span class="chip">FAQ</span>
+    </div>
+
+    <div class="hero">
+      <h1>HyperRAW – FAQ</h1>
+      <p class="sub">
+        Quick answers about workflows, performance, hardware support, licensing, and planned features.
+      </p>
+
+      <div class="row">
+        <a class="btn primary" href="index.html">← Back to Home</a>
+        <a class="btn" href="mailto:HyperRAW.app@gmail.com">Contact: HyperRAW.app@gmail.com</a>
+        <span class="hint">This page uses no analytics or tracking scripts.</span>
+      </div>
+
+      <section id="faq" class="section" style="margin-top:18px">
+        <h2>General</h2>
+
+        <details class="faq">
+          <summary>What is HyperRAW?</summary>
+          <div class="faq-content">
+            HyperRAW is a standalone, high-performance batch converter for Blackmagic RAW (BRAW) files.
+            It focuses on fast, reliable conversion into common production formats without requiring a full editing suite.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What’s the typical workflow?</summary>
+          <div class="faq-content">
+            Drag &amp; drop one or multiple <span class="mono">.braw</span> files, choose an output codec and settings,
+            then export everything in one batch. No timelines, no projects, no manual relinking.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Do I need DaVinci Resolve installed?</summary>
+          <div class="faq-content">
+            No. HyperRAW uses the official Blackmagic RAW SDK directly and works independently of DaVinci Resolve.
+          </div>
+        </details>
+
+        <h2 style="margin-top:18px">Performance &amp; Hardware</h2>
+
+        <details class="faq">
+          <summary>Is a GPU required?</summary>
+          <div class="faq-content">
+            No — HyperRAW also runs on CPU-only systems. However, NVIDIA <b>CUDA</b> can significantly accelerate decoding and processing,
+            especially at higher resolutions.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Which GPU APIs are supported?</summary>
+          <div class="faq-content">
+            <ul>
+              <li><b>CUDA (NVIDIA)</b>: supported and recommended</li>
+              <li><b>OpenCL</b>: not supported yet (planned)</li>
+              <li><b>Multi‑GPU</b>: not supported yet (planned)</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does HyperRAW support multiple GPUs?</summary>
+          <div class="faq-content">
+            Not yet. Currently HyperRAW uses a single GPU per export process. Multi‑GPU support is planned for a future release.
+          </div>
+        </details>
+
+        <h2 style="margin-top:18px">Formats &amp; Output</h2>
+
+        <details class="faq">
+          <summary>Which input formats are supported?</summary>
+          <div class="faq-content">
+            Currently: Blackmagic RAW (<span class="mono">.braw</span>).
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Which output formats are available?</summary>
+          <div class="faq-content">
+            Output formats depend on your system and available encoders. HyperRAW focuses on widely used, production-ready formats
+            (e.g. common MOV-based deliverables and image sequences).
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does HyperRAW use hardware encoders?</summary>
+          <div class="faq-content">
+            Where applicable, HyperRAW can use system-available encoders. Availability depends on your OS, driver stack, and installed components.
+          </div>
+        </details>
+
+        <h2 style="margin-top:18px">Licensing &amp; Privacy</h2>
+
+        <details class="faq">
+          <summary>Does HyperRAW upload, watermark, or claim rights to my media?</summary>
+          <div class="faq-content">
+            No. Processing happens locally. HyperRAW does not upload your footage, add watermarks, or claim any rights to your input or output files.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does HyperRAW require an internet connection?</summary>
+          <div class="faq-content">
+            Only if your license type requires online validation. Conversion itself runs offline.
+          </div>
+        </details>
+
+        <h2 style="margin-top:18px">Roadmap</h2>
+
+        <details class="faq">
+          <summary>What features are planned?</summary>
+          <div class="faq-content">
+            Planned: OpenCL support, multi‑GPU support, additional output options, and ongoing performance improvements.
+            Exact timelines are not fixed.
+          </div>
+        </details>
+
+        <div class="small" style="margin-top:14px">
+          Missing a question? Email <a href="mailto:HyperRAW.app@gmail.com">HyperRAW.app@gmail.com</a>.
+        </div>
+      </section>
+    </div>
+
+    <div class="section">
+      <div class="meta">
+        <div>
+          <div><b>Support</b></div>
+          <div class="small">Email-only: <a href="mailto:HyperRAW.app@gmail.com">HyperRAW.app@gmail.com</a></div>
+        </div>
+        <div class="small">
+          Software provided “as is”. Professional users only.
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>© HyperRAW</div>
+      <div class="small">
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="legal.html">Legal</a>
+      </div>
+      <footer class="legal">
+        <p>
+          Blackmagic RAW® is a registered trademark of Blackmagic Design Pty. Ltd.<br>
+          HyperRAW is an independent product and is not affiliated with or endorsed by Blackmagic Design.
+        </p>
+      </footer>
+    </footer>
+
+  </div>
+</body>
+</html>
