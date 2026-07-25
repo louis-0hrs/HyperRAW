@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://louis-0hrs.github.io/HyperRAW/sitemap.xml

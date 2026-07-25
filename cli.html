@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyperRAW CLI – BRAW Automation for Windows</title>
+  <meta name="description" content="Use the included HyperRAW command-line tool to automate BRAW conversion in scripts, server-side jobs, and repeatable processing workflows.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" type="image/png" href="HyperRAWlogo.png">
+  <link rel="stylesheet" href="hyperraw.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.55; background: radial-gradient(800px 480px at 10% 0%, rgba(127,176,230,.16), transparent 62%), radial-gradient(700px 450px at 100% 18%, rgba(232,160,32,.1), transparent 62%), var(--bg); }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 36px), 1140px); margin: 0 auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 32px 0 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); font-size: 23px; font-weight: 760; text-decoration: none; }
+    .brand img { width: 42px; height: 42px; border-radius: 13px; box-shadow: 0 9px 22px rgba(232,160,32,.26); }
+    .header-actions { display: flex; align-items: center; gap: 13px; }
+    .status { color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; font-size: 14px; white-space: nowrap; }
+    .back { color: var(--muted); font-size: 14px; text-underline-offset: 3px; }
+    main { padding-bottom: 54px; }
+    .hero, .card { border: 1px solid var(--line); background: linear-gradient(135deg, rgba(22,34,58,.94), rgba(10,18,32,.94)); }
+    .hero { padding: clamp(28px, 3.5vw, 44px); border-radius: 28px; }
+    .card { border-radius: 20px; }
+    .eyebrow { margin: 0 0 12px; color: var(--accent2); font-size: 13px; font-weight: 760; letter-spacing: .1em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 15ch; font-size: clamp(39px, 5vw, 65px); line-height: 1.05; letter-spacing: -.05em; }
+    .lead { max-width: 59ch; margin: 18px 0 0; color: var(--muted); font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 23px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 17px; border: 1px solid var(--line); border-radius: 13px; background: #202a3b; color: var(--text); text-decoration: none; font-weight: 700; }
+    .button.primary { border-color: transparent; background: linear-gradient(135deg, #e8a020, #f4b03e); color: #0e1626; box-shadow: 0 12px 27px rgba(232,160,32,.2); }
+    section { margin-top: 50px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .grid > * { min-width: 0; }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .card { padding: 23px; }
+    .card h2, .card h3 { margin: 0 0 9px; }
+    .card p, .card li { color: var(--muted); }
+    .card p { margin: 0; }
+    .code-card { padding: 27px; }
+    .callout { border-color: rgba(232,160,32,.58); background: linear-gradient(135deg, rgba(232,160,32,.15), rgba(22,34,58,.94)); }
+    .callout h2 { font-size: 25px; }
+    .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
+    .option { padding: 13px; border: 1px solid var(--line); border-radius: 10px; background: #0a1220; }
+    .option code { display: block; margin-bottom: 4px; font-weight: 700; }
+    .option span { display: block; color: var(--muted); font-size: 13px; }
+    pre { max-width: 100%; overflow-x: auto; margin: 14px 0 0; padding: 17px; border: 1px solid var(--line); border-radius: 9px; background: #0a1220; color: #dce9ff; font: 14px/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    code { color: #f4c468; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    ul { margin: 10px 0 0; padding-left: 20px; }
+    .exit-codes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+    .exit-code { padding: 13px; border-radius: 10px; background: #0a1220; border: 1px solid var(--line); }
+    .exit-code b { display: block; margin-bottom: 3px; color: var(--accent2); }
+    .exit-code span { color: var(--muted); font-size: 13px; }
+    footer { margin-top: 46px; padding: 23px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    @media (max-width: 700px) { .grid, .grid.two, .option-grid, .exit-codes { grid-template-columns: 1fr; } .wrap { width: min(calc(100% - 26px), 1140px); } .status { display: none; } .header-actions { gap: 0; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="index.html"><img src="HyperRAWlogo.png" alt="HyperRAW logo">HyperRAW</a><div class="header-actions"><span class="status">Included with Windows</span><a class="back" href="index.html">← Back to home</a></div></header>
+    <main>
+      <section class="hero"><p class="eyebrow">CLI &amp; automation</p><h1>Bring BRAW conversion into your workflow.</h1><p class="lead">The Windows package includes <code>hyperraw_cli.exe</code>: a real command-line converter for scripts, servers, scheduled jobs, and agentic media pipelines. Give it a BRAW file, an existing output folder, and a codec—then make conversion a dependable building block in your own system.</p><div class="actions"><a class="button primary" href="https://github.com/louis-0hrs/HyperRAW/releases">Download for Windows</a><a class="button" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide</a></div></section>
+
+      <section class="grid"><article class="card"><h3>Included with HyperRAW</h3><p>Find the executable in the Windows package at <code>bin\hyperraw_cli.exe</code>. No separate developer download is required.</p></article><article class="card"><h3>Made for orchestration</h3><p>Use it from PowerShell, task schedulers, server-side services, media automation, or agentic workflows that need a focused conversion step.</p></article><article class="card"><h3>Explicit by design</h3><p>Each run declares its input, output directory, codec, and optional encoder. That makes jobs easy to reproduce, inspect, and retry.</p></article></section>
+
+      <section class="card callout"><h2>A dependable conversion primitive for your pipeline.</h2><p>HyperRAW CLI is ideal when a person, script, service, or AI agent has already decided what needs to be converted. It handles the BRAW conversion step while your workflow keeps control of the surrounding logic: file discovery, scheduling, review, delivery, and retries.</p></section>
+
+      <section class="card code-card"><h2>Start with one clear command</h2><p>Convert one BRAW clip to a lossless FFV1 output and explicitly allow an existing file to be replaced.</p><pre>hyperraw_cli.exe --input "C:\incoming\clip.braw" --output "C:\exports" --codec ffv1 --overwrite</pre><p style="margin-top:14px">The input must be a BRAW file and the output directory must already exist. The command reports status and progress while it runs.</p></section>
+
+      <section><div class="grid two"><article class="card"><h2>Everything you can control</h2><div class="option-grid"><div class="option"><code>--input &lt;file&gt;</code><span>Required BRAW source file.</span></div><div class="option"><code>--output &lt;directory&gt;</code><span>Required existing destination folder.</span></div><div class="option"><code>--codec &lt;name&gt;</code><span>Choose the output codec.</span></div><div class="option"><code>--encoder &lt;name&gt;</code><span>Use an explicit FFmpeg encoder, for example <code>libx265</code>.</span></div><div class="option"><code>--bit-depth &lt;8|10|16&gt;</code><span>Set the requested output bit depth.</span></div><div class="option"><code>--overwrite</code><span>Replace existing output without stopping for confirmation.</span></div><div class="option"><code>--version</code><span>Print the installed HyperRAW version.</span></div><div class="option"><code>--help</code><span>Show the complete command reference.</span></div></div></article><article class="card"><h2>Codec choices</h2><p>Choose the format that fits the next stage of your workflow. HyperRAW CLI accepts:</p><ul><li><code>h264</code> — 8-bit delivery output</li><li><code>h265</code> / <code>hevc</code> — 10-bit HEVC</li><li><code>av1</code> and <code>vp9</code> — 10-bit modern delivery formats</li><li><code>prores</code> and <code>cineform</code> — 10-bit edit-friendly intermediates</li><li><code>ffv1</code> — 16-bit lossless archival output</li></ul><p style="margin-top:14px">Each codec chooses a sensible default bit depth; use <code>--bit-depth</code> when your pipeline needs an explicit value.</p></article></div></section>
+
+      <section class="grid two"><article class="card code-card"><h2>HEVC with an explicit encoder</h2><p>Use a specific FFmpeg encoder when you need predictable routing in an established processing environment.</p><pre>hyperraw_cli.exe --input "C:\incoming\clip.braw" --output "C:\exports" --codec h265 --encoder libx265 --bit-depth 10 --overwrite</pre></article><article class="card code-card"><h2>Process a folder from PowerShell</h2><p>Keep your own orchestration layer and call HyperRAW once per source clip.</p><pre>$destination = 'C:\exports'
+Get-ChildItem 'C:\incoming' -Filter *.braw | ForEach-Object {
+  &amp; .\hyperraw_cli.exe --input $_.FullName --output $destination --codec h265 --overwrite
+  if ($LASTEXITCODE -ne 0) { throw "HyperRAW failed: $($_.Name)" }
+}</pre></article></section>
+
+      <section class="card"><h2>Fits cleanly into automated systems</h2><p>HyperRAW CLI prints conversion status and progress while it works. Your workflow can use its exit code to decide what happens next:</p><div class="exit-codes"><div class="exit-code"><b>0</b><span>Conversion completed successfully.</span></div><div class="exit-code"><b>1</b><span>Input probing or conversion failed.</span></div><div class="exit-code"><b>2</b><span>Invalid arguments, missing input, or missing output directory.</span></div></div></section>
+
+      <section class="card support"><h2>Need the complete reference?</h2><p>The User Guide includes the CLI quick start. On any installed release, run <code>hyperraw_cli.exe --help</code> to see the exact argument reference for that version.</p><div class="actions"><a class="button" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a class="button" href="mailto:HyperRAW.app@gmail.com">Ask a workflow question</a></div></section>
+    </main>
+    <footer>HyperRAW is an independent product and is not affiliated with or endorsed by Blackmagic Design.</footer>
+  </div>
+</body>
+</html>

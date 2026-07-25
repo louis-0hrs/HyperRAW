@@ -1,0 +1,24 @@
+/* HyperRAW shared visual language — aligned with the desktop application UI. */
+:root {
+  --bg: #0e1626;
+  --panel: #16223a;
+  --panel2: #0a1220;
+  --surface: #16223a;
+  --surface-soft: #0a1220;
+  --text: #e6edf6;
+  --muted: #8a9bb0;
+  --line: #2b3850;
+  --accent: #e8a020;
+  --accent2: #7fb0e6;
+  --accent-2: #7fb0e6;
+  --sale: #e8a020;
+}
+
+body {
+  background-color: var(--bg) !important;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

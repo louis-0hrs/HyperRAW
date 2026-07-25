@@ -31,8 +31,8 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(900px 500px at 20% 0%, rgba(124,92,255,.18), transparent 55%),
-        radial-gradient(800px 500px at 90% 10%, rgba(55,214,255,.14), transparent 50%),
+        radial-gradient(900px 500px at 20% 0%, rgba(127,176,230,.16), transparent 55%),
+        radial-gradient(800px 500px at 90% 10%, rgba(232,160,32,.12), transparent 50%),
         var(--bg);
       color:var(--text);
       line-height:1.5;
@@ -193,6 +193,7 @@
 
 
   </style>
+  <link rel="stylesheet" href="hyperraw.css">
 </head>
 
 <body>
@@ -213,6 +214,7 @@
 
       <div class="row">
         <a class="btn primary" href="index.html">← Back to Home</a>
+        <a class="btn" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a>
         <a class="btn" href="mailto:HyperRAW.app@gmail.com">Contact: HyperRAW.app@gmail.com</a>
         <span class="hint">This page uses no analytics or tracking scripts.</span>
       </div>
@@ -231,8 +233,8 @@
         <details class="faq">
           <summary>What’s the typical workflow?</summary>
           <div class="faq-content">
-            Drag &amp; drop one or multiple <span class="mono">.braw</span> files, choose an output codec and settings,
-            then export everything in one batch. No timelines, no projects, no manual relinking.
+            Drag &amp; drop one or multiple <span class="mono">.braw</span> files or folders, choose an output codec and settings,
+            then export the ready files in one batch. No timelines, projects, or manual relinking are required.
           </div>
         </details>
 
@@ -243,13 +245,21 @@
           </div>
         </details>
 
+        <details class="faq">
+          <summary>Which operating systems are supported?</summary>
+          <div class="faq-content">
+            HyperRAW is currently available for Windows 10 and Windows 11. macOS and Linux versions are planned;
+            no release date has been announced yet.
+          </div>
+        </details>
+
         <h2 style="margin-top:18px">Performance &amp; Hardware</h2>
 
         <details class="faq">
           <summary>Is a GPU required?</summary>
           <div class="faq-content">
-            No — HyperRAW also runs on CPU-only systems. However, NVIDIA <b>CUDA</b> can significantly accelerate decoding and processing,
-            especially at higher resolutions.
+            No. HyperRAW also runs on CPU-only systems. A compatible GPU can accelerate decoding and processing,
+            especially at higher resolutions, but CPU conversion remains available as a fallback.
           </div>
         </details>
 
@@ -257,17 +267,19 @@
           <summary>Which GPU APIs are supported?</summary>
           <div class="faq-content">
             <ul>
-              <li><b>CUDA (NVIDIA)</b>: supported and recommended</li>
-              <li><b>OpenCL</b>: not supported yet (planned)</li>
-              <li><b>Multi‑GPU</b>: not supported yet (planned)</li>
+              <li><b>CUDA:</b> available for NVIDIA GPUs</li>
+              <li><b>OpenCL:</b> available for compatible AMD, Intel, and NVIDIA GPUs</li>
+              <li><b>CPU:</b> available when no suitable GPU is present or selected</li>
             </ul>
+            HyperRAW detects the available backends and lets you use Auto or select a compatible processing device.
           </div>
         </details>
 
         <details class="faq">
           <summary>Does HyperRAW support multiple GPUs?</summary>
           <div class="faq-content">
-            Not yet. Currently HyperRAW uses a single GPU per export process. Multi‑GPU support is planned for a future release.
+            HyperRAW detects available CUDA, OpenCL, and CPU backends. Use Auto for hardware detection or select a compatible backend
+            and device explicitly. Available options and performance depend on your hardware, drivers, and selected export settings.
           </div>
         </details>
 
@@ -283,8 +295,9 @@
         <details class="faq">
           <summary>Which output formats are available?</summary>
           <div class="faq-content">
-            Output formats depend on your system and available encoders. HyperRAW focuses on widely used, production-ready formats
-            (e.g. common MOV-based deliverables and image sequences).
+            HyperRAW supports H.264, H.265 (HEVC), AV1, VP9, ProRes-compatible, CineForm-compatible, and FFV1 video output.
+            It also supports JPEG, PNG, TIFF, JPEG-XR, OpenEXR, DPX, and Linear-DNG image sequences, plus WAV audio extraction.
+            The available encoder options depend on your system and installed components.
           </div>
         </details>
 
@@ -298,16 +311,42 @@
         <h2 style="margin-top:18px">Licensing &amp; Privacy</h2>
 
         <details class="faq">
+          <summary>How much does HyperRAW cost?</summary>
+          <div class="faq-content">
+            HyperRAW is sold through Gumroad for €39. During July, use code <span class="mono">JULY-SALE</span>
+            for 20% off (€31.20). The free Windows mode never expires: every application start includes two successful UHD exports
+            without a watermark before you upgrade for larger jobs.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does the free mode expire?</summary>
+          <div class="faq-content">
+            No. The free mode has no expiry date and does not require an account. Every time you start HyperRAW, you receive
+            two successful UHD exports without a watermark.
+          </div>
+        </details>
+
+        <details class="faq">
           <summary>Does HyperRAW upload, watermark, or claim rights to my media?</summary>
           <div class="faq-content">
-            No. Processing happens locally. HyperRAW does not upload your footage, add watermarks, or claim any rights to your input or output files.
+            Processing happens locally. HyperRAW does not upload your footage or claim rights to your input or output files.
+            The free mode produces UHD output without a watermark; larger free exports receive a watermark.
           </div>
         </details>
 
         <details class="faq">
           <summary>Does HyperRAW require an internet connection?</summary>
           <div class="faq-content">
-            Only if your license type requires online validation. Conversion itself runs offline.
+            An internet connection is required to activate a Gumroad license. After activation, conversion itself runs locally and offline.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Is there a command-line interface for automation?</summary>
+          <div class="faq-content">
+            Yes. The Windows package includes <span class="mono">bin\hyperraw_cli.exe</span> for scripts, scheduled jobs,
+            server-side processing, and agentic media workflows. See the <a href="cli.html">CLI &amp; automation page</a> for examples.
           </div>
         </details>
 
@@ -316,7 +355,7 @@
         <details class="faq">
           <summary>What features are planned?</summary>
           <div class="faq-content">
-            Planned: OpenCL support, multi‑GPU support, additional output options, and ongoing performance improvements.
+            Planned: macOS and Linux versions, additional output options, and ongoing performance improvements.
             Exact timelines are not fixed.
           </div>
         </details>

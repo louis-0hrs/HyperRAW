@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>BRAW to MP4 / MOV Converter – Free up to UHD | HyperRAW</title>
-  <meta name="description" content="Convert Blackmagic RAW (BRAW) to MP4 or MOV fast. Unlicensed mode: up to UHD output and max 2 files per session. License only if you need more." />
+  <meta name="description" content="Convert Blackmagic RAW (BRAW) to MP4 or MOV fast. Free forever: two successful UHD exports every time you start HyperRAW. License only if you need more." />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="BRAW to MP4 / MOV Converter – Free up to UHD | HyperRAW" />
-  <meta property="og:description" content="Convert BRAW to MP4 or MOV. Unlicensed: up to UHD and max 2 files per session. License only if you need more." />
+  <meta property="og:description" content="Convert BRAW to MP4 or MOV. Free forever: two successful UHD exports every time you start HyperRAW. License only if you need more." />
 
    <link rel="icon" type="image/png" href="HyperRAWlogo.png">
    <link rel="apple-touch-icon" href="HyperRAWlogo.png">
@@ -40,9 +40,9 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
       background:
-        radial-gradient(900px 420px at 15% 10%, rgba(106, 167, 255, 0.17), transparent 55%),
-        radial-gradient(900px 420px at 90% 5%, rgba(126, 231, 199, 0.11), transparent 55%),
-        radial-gradient(700px 460px at 55% 95%, rgba(106, 167, 255, 0.10), transparent 60%),
+        radial-gradient(900px 420px at 15% 10%, rgba(127, 176, 230, 0.17), transparent 55%),
+        radial-gradient(900px 420px at 90% 5%, rgba(232, 160, 32, 0.12), transparent 55%),
+        radial-gradient(700px 460px at 55% 95%, rgba(127, 176, 230, 0.10), transparent 60%),
         var(--bg);
       line-height: 1.5;
     }
@@ -330,6 +330,7 @@
     .muted { color: var(--muted); }
     .anchor { scroll-margin-top: 84px; }
   </style>
+  <link rel="stylesheet" href="hyperraw.css">
 
   <!-- FAQ + Software schema (lightweight) -->
   <script type="application/ld+json">
@@ -341,14 +342,14 @@
         "name": "HyperRAW",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows",
-        "description": "Convert Blackmagic RAW (BRAW) to MP4 or MOV. Unlicensed mode outputs up to UHD and supports up to 2 files per session.",
+        "description": "Convert Blackmagic RAW (BRAW) to MP4 or MOV. Free mode outputs up to UHD and includes two successful exports every application start.",
         "offers": [
           {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD",
             "category": "Free",
-            "description": "Unlicensed mode: up to UHD output and max 2 files per session."
+            "description": "Free mode: up to UHD output and two successful exports every application start."
           },
           {
             "@type": "Offer",
@@ -356,7 +357,7 @@
             "priceCurrency": "EUR",
             "category": "Paid",
             "url": "https://haldoro.gumroad.com/l/HyperRAW",
-            "description": "HyperRAW license for higher-than-UHD output and advanced workflows. €39; use code JULY-SALE for 20% off (€31.20)."
+            "description": "HyperRAW license for higher-than-UHD output and advanced workflows. €39 via Gumroad; use code JULY-SALE in July for 20% off (€31.20)."
           }
         ]
       },
@@ -368,7 +369,7 @@
             "name": "Is HyperRAW free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Unlicensed mode converts Blackmagic RAW (BRAW) to MP4 or MOV by scaling down to UHD output, with a limit of 2 files per session."
+              "text": "Yes. Free mode converts Blackmagic RAW (BRAW) to MP4 or MOV with UHD output. Every application start includes two successful exports."
             }
           },
           {
@@ -376,7 +377,7 @@
             "name": "Can I convert BRAW to MP4?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes—HyperRAW converts BRAW to MP4. In unlicensed mode, output is up to UHD and limited to 2 files per session."
+              "text": "Yes—HyperRAW converts BRAW to MP4. Free mode outputs up to UHD and includes two successful exports every application start."
             }
           },
           {
@@ -384,7 +385,7 @@
             "name": "Can I convert BRAW to MOV?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes—HyperRAW converts BRAW to MOV. In unlicensed mode, output is up to UHD and limited to 2 files per session."
+              "text": "Yes—HyperRAW converts BRAW to MOV. Free mode outputs up to UHD and includes two successful exports every application start."
             }
           },
           {
@@ -400,7 +401,7 @@
             "name": "Does HyperRAW support 6K/8K/12K/17K BRAW?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes—HyperRAW can handle high-resolution BRAW sources. Unlicensed mode outputs up to UHD; higher-than-UHD output requires a license."
+              "text": "Yes—HyperRAW can handle high-resolution BRAW sources. Free mode outputs up to UHD; higher-than-UHD output requires a license."
             }
           },
           {
@@ -408,7 +409,7 @@
             "name": "When do I need a license?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "If you need more than 2 files per session, output above UHD, or advanced/pro workflows, you’ll want a license."
+              "text": "If you need uninterrupted batches, output above UHD, or advanced/pro workflows, you’ll want a license."
             }
           }
         ]
@@ -428,11 +429,13 @@
         </a>
 
         <div class="navlinks">
-          <span class="chip">Unlicensed: UHD + 2 files/session</span>
+          <span class="chip">Free forever: UHD + 2 exports / app start</span>
           <a href="#features">Features</a>
           <a href="#formats">Formats</a>
           <a href="#faq">FAQ</a>
           <a href="#license">License</a>
+          <a href="cli.html">CLI</a>
+          <a href="HyperRAW_2026_User_Guide_EN.pdf" download>User Guide (PDF)</a>
         </div>
       </div>
     </div>
@@ -447,18 +450,20 @@
             <p class="sub">
               Convert <b>Blackmagic RAW (BRAW)</b> to <b>MP4</b> or <b>MOV</b>—fast, simple, and built for batch workflows.
               <br />
-              <b>Unlicensed mode:</b> outputs up to <b>UHD</b> and converts <b>max 2 files per session</b>. License only if you need more.
+              <b>Free forever:</b> every app start includes <b>2 successful UHD exports</b>. No account, no expiry, and no watermark.
+              <br />
+              <span class="note">Available now for Windows. macOS and Linux versions are planned.</span>
             </p>
 
             <div class="ctaRow">
-              <!-- Replace href with your actual GitHub release / download URL -->
-              <a class="btn primary" href="https://github.com/louis-0hrs/HyperRAW/releases" rel="nofollow">Download for Windows</a>
+              <a class="btn primary" href="https://github.com/louis-0hrs/HyperRAW/releases" rel="nofollow">Download free for Windows</a>
+              <a class="btn" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=braw-to-mp4" target="_blank" rel="noopener">Unlock full version · €39</a>
               <a class="btn" href="#formats">Supported formats</a>
               <a class="btn" href="#faq">Read FAQ</a>
             </div>
 
             <div class="promise">
-              <b>Free trial without accounts:</b> convert two BRAW clips per session to UHD MP4/MOV. Upgrade when you’re ready for bigger jobs.
+              <b>Start it again, get two more:</b> every app start renews the free allowance. Upgrade only for uninterrupted full-resolution and batch workflows.
             </div>
 
             <p class="note">
@@ -469,10 +474,10 @@
           <aside class="card sideCard" aria-label="Key points">
             <p class="kTitle">Quick facts</p>
             <ul class="kList">
-              <li class="kItem"><b>Unlicensed</b><span>Up to UHD output + max 2 files per session</span></li>
+              <li class="kItem"><b>Free forever</b><span>2 UHD exports every app start · no account or expiry</span></li>
               <li class="kItem"><b>Outputs</b><span>MP4 and MOV (common delivery formats)</span></li>
               <li class="kItem"><b>Use case</b><span>Batch conversion for fast turnaround</span></li>
-              <li class="kItem"><b>Upgrade</b><span>More files per session, higher resolutions, advanced workflows</span></li>
+              <li class="kItem"><b>Full version · €39</b><span>Unrestricted full-resolution exports and batch workflows</span></li>
             </ul>
           </aside>
         </div>
@@ -482,28 +487,28 @@
         <div class="grid3">
           <div class="card mini">
             <h3>Free up to UHD</h3>
-            <p>Unlicensed mode converts BRAW to UHD MP4/MOV—perfect for quick tests and small deliveries.</p>
+            <p>Free mode converts BRAW to UHD MP4/MOV—perfect for quick tests and small deliveries, with a renewed allowance every app start.</p>
           </div>
           <div class="card mini">
-            <h3>2 files per session</h3>
-            <p>Try it without friction: convert two clips per session. License removes the limit for real batch work.</p>
+            <h3>2 free exports every start</h3>
+            <p>Close and reopen HyperRAW to renew the free allowance. Upgrade for uninterrupted batch work.</p>
           </div>
           <div class="card mini">
-            <h3>Made for reliability</h3>
-            <p>Focused converter, not an editor—designed for predictable output and simple operation.</p>
+            <h3>CUDA, OpenCL, or CPU</h3>
+            <p>Use NVIDIA CUDA, compatible AMD/Intel/NVIDIA OpenCL hardware, or CPU-only conversion.</p>
           </div>
         </div>
       </section>
 
       <section>
         <div class="card sectionCard">
-          <h2>What you can do in unlicensed mode</h2>
+          <h2>What you can do for free—forever</h2>
           <ul class="bullets">
             <li>Convert <b>BRAW → MP4</b> (output up to <b>UHD</b>)</li>
             <li>Convert <b>BRAW → MOV</b> (output up to <b>UHD</b>)</li>
-            <li><b>Max 2 files per session</b> (simple trial limit)</li>
+            <li><b>2 successful exports every app start</b> (no account or expiry)</li>
           </ul>
-          <p class="note">If you need more files per session or output above UHD, jump to the license section below.</p>
+          <p class="note">For uninterrupted batches or output above UHD, jump to the license section below.</p>
         </div>
       </section>
 
@@ -511,14 +516,14 @@
         <div class="card sectionCard">
           <h2>When you need a license</h2>
           <ul class="bullets">
-            <li>Converting <b>more than 2 files per session</b></li>
+            <li>Running <b>uninterrupted batch jobs</b> without restarting the app</li>
             <li>Output above <b>UHD</b> (e.g., 6K/8K/12K/17K delivery)</li>
             <li>Larger batch workloads and advanced workflows</li>
           </ul>
           <p class="note">Keep the free mode for quick UHD conversions. Upgrade when your pipeline grows.</p>
           <div class="ctaRow">
-            <a class="btn primary" href="https://haldoro.gumroad.com/l/HyperRAW">Buy HyperRAW on Gumroad · €39</a>
-            <span class="note">Use code <b>JULY-SALE</b> for 20% off (€31.20).</span>
+            <a class="btn primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=braw-to-mp4" target="_blank" rel="noopener">Buy HyperRAW on Gumroad · €39</a>
+            <span class="note">20% off in July with code <b>JULY-SALE</b> (€31.20).</span>
           </div>
         </div>
       </section>
@@ -529,7 +534,7 @@
           <div class="steps">
             <div class="step"><b>1) Add BRAW clips</b><span>Select files or a folder for batch conversion.</span></div>
             <div class="step"><b>2) Choose output</b><span>Pick MP4 or MOV and a preset.</span></div>
-            <div class="step"><b>3) Convert</b><span>Unlicensed: up to UHD, 2 files/session. Licensed: no trial limits.</span></div>
+            <div class="step"><b>3) Convert</b><span>Free forever: 2 UHD exports every app start. Licensed: uninterrupted full workflows.</span></div>
           </div>
         </div>
       </section>
@@ -544,7 +549,7 @@
             </div>
             <div class="box">
               <h3>Output</h3>
-              <p><b>MP4</b>, <b>MOV</b> (UHD in unlicensed mode)</p>
+              <p><b>MP4</b>, <b>MOV</b> (UHD in free mode)</p>
             </div>
           </div>
           <p class="note">If you offer additional codecs (e.g., ProRes), consider linking to a separate “All outputs” page to keep this landing page focused.</p>
@@ -557,15 +562,15 @@
           <div class="faq">
             <details>
               <summary>Is HyperRAW free?</summary>
-              <p>Yes. Unlicensed mode converts BRAW to MP4 or MOV with output up to UHD and a limit of 2 files per session.</p>
+              <p>Yes. Free mode converts BRAW to MP4 or MOV with UHD output. Every app start includes two successful exports.</p>
             </details>
             <details>
               <summary>Can I convert BRAW to MP4?</summary>
-              <p>Yes—HyperRAW converts Blackmagic RAW (BRAW) to MP4. Unlicensed mode is UHD output and max 2 files per session.</p>
+              <p>Yes—HyperRAW converts Blackmagic RAW (BRAW) to MP4. Free mode outputs up to UHD and renews two successful exports at every app start.</p>
             </details>
             <details>
               <summary>Can I convert BRAW to MOV?</summary>
-              <p>Yes—HyperRAW converts BRAW to MOV. Unlicensed mode is UHD output and max 2 files per session.</p>
+              <p>Yes—HyperRAW converts BRAW to MOV. Free mode outputs up to UHD and renews two successful exports at every app start.</p>
             </details>
             <details>
               <summary>Do I need DaVinci Resolve?</summary>
@@ -573,11 +578,11 @@
             </details>
             <details>
               <summary>Does it support 6K/8K/12K/17K BRAW?</summary>
-              <p>HyperRAW can handle high-resolution BRAW sources. Unlicensed mode outputs up to UHD; higher-than-UHD output requires a license.</p>
+              <p>HyperRAW can handle high-resolution BRAW sources. Free mode outputs up to UHD; higher-than-UHD output requires a license.</p>
             </details>
             <details>
               <summary>When do I need a license?</summary>
-              <p>If you need more than 2 files per session, output above UHD, or advanced workflows, you’ll want a license.</p>
+              <p>If you need uninterrupted batches, output above UHD, or advanced workflows, you’ll want a license.</p>
             </details>
           </div>
         </div>
@@ -587,13 +592,13 @@
         <div class="footerRow">
           <div>
             <div><b>HyperRAW</b> <span class="muted">— Blackmagic RAW (BRAW) Converter</span></div>
-            <div class="muted">Unlicensed mode: UHD output, max 2 files per session.</div>
+            <div class="muted">Free forever: UHD output and two successful exports every app start.</div>
           </div>
           <div class="footerLinks">
             <a href="./index.html">Home</a>
             <a href="./faq.html">FAQ</a>
             <a href="./privacy.html">Privacy</a>
-            <a href="./imprint.html">Imprint</a>
+            <a href="./impressum.html">Imprint</a>
           </div>
         </div>
         <p class="muted" style="margin: 14px 0 0;">
