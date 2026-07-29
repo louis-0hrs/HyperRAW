@@ -4,9 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HyperRAW – BRAW Converter for Windows</title>
-  <meta name="description" content="HyperRAW is a high-performance BRAW converter for Windows. Try it free for UHD conversions, or unlock full-resolution batch workflows with a €39 Gumroad license.">
+  <meta name="description" content="HyperRAW is a high-performance BRAW converter for Windows. Try it free for UHD conversions, or unlock full-resolution batch workflows through Gumroad.">
   <meta name="author" content="HyperRAW">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://louis-0hrs.github.io/HyperRAW/">
+  <meta property="og:site_name" content="HyperRAW">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="HyperRAW – BRAW Converter for Windows">
+  <meta property="og:description" content="Convert BRAW locally on Windows with free UHD exports, batch workflows, and an included command-line tool.">
+  <meta property="og:url" content="https://louis-0hrs.github.io/HyperRAW/">
+  <meta property="og:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HyperRAW – From BRAW to delivery-ready files.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HyperRAW – BRAW Converter for Windows">
+  <meta name="twitter:description" content="Convert BRAW locally on Windows with free UHD exports, batch workflows, and an included command-line tool.">
+  <meta name="twitter:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
   <link rel="icon" type="image/png" href="HyperRAWlogo.png">
   <link rel="apple-touch-icon" href="HyperRAWlogo.png">
   <style>
@@ -146,17 +161,68 @@
     }
   </style>
   <link rel="stylesheet" href="hyperraw.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://louis-0hrs.github.io/HyperRAW/#website",
+        "url": "https://louis-0hrs.github.io/HyperRAW/",
+        "name": "HyperRAW",
+        "description": "A local BRAW converter for Windows with free UHD exports, batch workflows, and a command-line tool.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://louis-0hrs.github.io/HyperRAW/#organization",
+        "name": "HyperRAW",
+        "url": "https://louis-0hrs.github.io/HyperRAW/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://louis-0hrs.github.io/HyperRAW/HyperRAWlogo.png"
+        },
+        "sameAs": ["https://github.com/louis-0hrs/HyperRAW"]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-nav-shell">
+      <a class="site-brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="">HyperRAW</a>
+      <nav class="site-nav-links" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Product</a>
+        <a href="braw-to-mp4.html">BRAW converter</a>
+        <a href="what-is-a-braw-file.html">What is BRAW?</a>
+        <a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a>
+        <a href="cli.html">CLI</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="site-nav-actions">
+        <a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a>
+        <a href="#license">Pricing</a>
+      </div>
+      <details class="site-mobile-menu">
+        <summary>Menu</summary>
+        <nav class="site-mobile-links" aria-label="Mobile navigation">
+          <a href="index.html" aria-current="page">Product</a>
+          <a href="braw-to-mp4.html">BRAW converter</a>
+          <a href="what-is-a-braw-file.html">What is BRAW?</a>
+          <a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a>
+          <a href="cli.html">CLI &amp; automation</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a>
+          <a href="#license">Pricing</a>
+        </nav>
+      </details>
+    </div>
+  </header>
   <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="HyperRAW logo">HyperRAW</a>
-      <span class="status">Available now · Windows</span>
-    </header>
-
     <main>
       <div class="sale-banner" role="note">
-        <strong>JULY SALE · 20% OFF</strong><span>Get HyperRAW for €31.20 with code</span><span class="sale-code">JULY-SALE</span><button class="copy-code sale-copy" type="button" data-code="JULY-SALE" aria-live="polite">Copy code</button><span>and enter it at Gumroad checkout</span>
+        <strong>JULY SALE · 20% OFF</strong><span>Use code</span><span class="sale-code">JULY-SALE</span><button class="copy-code sale-copy" type="button" data-code="JULY-SALE" aria-live="polite">Copy code</button><span>Ends July 31, 2026 · Current price and final tax-inclusive total are shown on Gumroad</span>
       </div>
 
       <section class="hero" aria-labelledby="hero-title">
@@ -165,13 +231,21 @@
           <h1 id="hero-title">From BRAW to delivery-ready files.</h1>
           <p class="lead">HyperRAW converts Blackmagic RAW footage locally, quickly, and reliably—built for high-resolution batch workflows on Windows.</p>
           <div class="tags" aria-label="Product highlights"><span class="tag">Windows 10 / 11</span><span class="tag">CUDA · OpenCL · CPU</span><span class="tag">NVIDIA · AMD · Intel</span></div>
+          <div class="purchase-offer" aria-label="July license offer">
+            <div class="offer-actions">
+              <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
+              <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
+            </div>
+            <p class="offer-price">20% off the current Gumroad base price.</p>
+            <p class="offer-tax"><strong>Price transparency:</strong> Gumroad displays the current price, calculates any location-dependent VAT or sales tax, and shows the final total before payment.</p>
+            <p class="offer-deadline">Code valid through July 31, 2026.</p>
+          </div>
           <div class="actions">
-            <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW · <s>€39</s>&nbsp; €31.20</a>
             <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Try free on Windows</a>
           </div>
           <p class="hero-note"><b>Free forever:</b> every app start includes two successful UHD exports without a watermark—no account and no expiry.</p>
           <a class="cli-cta" href="cli.html"><span><b>CLI &amp; automation</b><small>Included with the Windows package</small></span><strong>For servers, scripts &amp; agentic workflows →</strong></a>
-          <div class="utility-links"><a href="faq.html">Read the FAQ</a><a href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
+          <div class="utility-links"><a href="what-is-a-braw-file.html">What is a BRAW file?</a><a href="faq.html">Read the FAQ</a><a href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
         </div>
         <figure class="product-shot">
           <img src="HyperRAW-2026-interface.png" alt="HyperRAW 2026 on Windows, showing the BRAW file queue and export settings" width="1556" height="1124">
@@ -180,7 +254,7 @@
       </section>
 
       <section aria-labelledby="why-title">
-        <div class="section-heading"><h2 id="why-title">A focused converter for demanding footage.</h2><p>Skip the editing suite when you only need dependable BRAW conversion and clean output.</p></div>
+        <div class="section-heading"><h2 id="why-title">A focused converter for demanding footage.</h2><p>Use HyperRAW for dedicated conversion and automation. Keep DaVinci Resolve for native BRAW editing, color, effects, audio, and finishing. <a href="hyperraw-and-davinci-resolve.html">See how the tools fit together.</a></p></div>
         <div class="features">
           <article class="card feature"><span class="feature-number">01</span><h3>Fast batch conversion</h3><p>Queue BRAW clips or folders and process your footage with settings applied consistently across the batch.</p></article>
           <article class="card feature"><span class="feature-number">02</span><h3>Flexible hardware support</h3><p>Use CUDA on NVIDIA, OpenCL on compatible AMD, Intel, or NVIDIA hardware, or convert entirely on the CPU.</p></article>
@@ -191,8 +265,22 @@
       <section id="license" aria-labelledby="license-title">
         <div class="section-heading"><h2 id="license-title">Free forever. Upgrade when the job gets bigger.</h2><p>Every app start includes two free UHD exports. Unlock the full workflow when you need uninterrupted batches or full resolution.</p></div>
         <div class="license-grid">
-          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">€0 <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Download for Windows</a></article>
-          <article class="card license featured"><p class="plan-label">Full version</p><h3>HyperRAW license</h3><p class="price">€31.20 <span>in July · normally €39</span></p><ul><li>Unrestricted full-resolution exports</li><li>Large batch workflows</li><li>Advanced formats and production options</li></ul><a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Claim July offer</a><div class="coupon"><span class="coupon-label">At Gumroad, enter this code at checkout to receive the July price:</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy code</button></div></article>
+          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">Free <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Download for Windows</a></article>
+          <article class="card license featured">
+            <p class="plan-label">Full version</p>
+            <h3>HyperRAW license</h3>
+            <p class="price">20% off <span>through July 31, 2026</span></p>
+            <ul><li>Unrestricted full-resolution exports</li><li>Large batch workflows</li><li>Advanced formats and production options</li></ul>
+            <div class="purchase-offer compact" aria-label="July license offer">
+              <div class="offer-actions">
+                <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
+                <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
+              </div>
+              <p class="offer-price">20% off the current Gumroad base price.</p>
+              <p class="offer-tax">Gumroad shows the current price, applicable tax, and final total before payment.</p>
+              <p class="offer-deadline">Code valid through July 31, 2026.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -210,12 +298,12 @@
       </section>
     </main>
 
-    <footer>
-      <div>© HyperRAW 2026<span class="platform-note">Windows available now · macOS and Linux planned</span></div>
-      <nav aria-label="Legal"><a href="faq.html">FAQ</a><a href="cli.html">CLI &amp; automation</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
-      <p class="legal">Blackmagic RAW® is a registered trademark of Blackmagic Design Pty. Ltd. HyperRAW is an independent product and is not affiliated with or endorsed by Blackmagic Design.</p>
-    </footer>
   </div>
+  <footer class="site-footer">
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
+  </footer>
   <script>
     document.querySelectorAll('.copy-code').forEach((button) => {
       button.addEventListener('click', async () => {

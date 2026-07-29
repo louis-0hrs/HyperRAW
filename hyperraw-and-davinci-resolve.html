@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyperRAW and DaVinci Resolve: How They Work Together</title>
+  <meta name="description" content="Learn when to keep BRAW native in DaVinci Resolve, when focused conversion with HyperRAW is useful, and how both tools can fit into one media workflow.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://louis-0hrs.github.io/HyperRAW/hyperraw-and-davinci-resolve.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="HyperRAW">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="HyperRAW and DaVinci Resolve: Different Tools, One Workflow">
+  <meta property="og:description" content="A neutral, sourced guide to native BRAW post-production, dedicated conversion, and choosing the right tool for each stage.">
+  <meta property="og:url" content="https://louis-0hrs.github.io/HyperRAW/hyperraw-and-davinci-resolve.html">
+  <meta property="og:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HyperRAW – From BRAW to delivery-ready files.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HyperRAW and DaVinci Resolve: Different Tools, One Workflow">
+  <meta name="twitter:description" content="Learn when to keep BRAW native in Resolve and when focused conversion can complement the workflow.">
+  <meta name="twitter:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
+  <link rel="icon" type="image/png" href="HyperRAWlogo.png">
+  <link rel="apple-touch-icon" href="HyperRAWlogo.png">
+  <link rel="stylesheet" href="hyperraw.css">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(840px 500px at 8% 0%, rgba(127,176,230,.16), transparent 64%),
+        radial-gradient(760px 500px at 100% 23%, rgba(232,160,32,.1), transparent 64%),
+        var(--bg);
+    }
+    a { color: var(--accent2); }
+    .page-wrap { width: min(calc(100% - 36px), 1140px); margin: 0 auto; }
+    .breadcrumbs { display: flex; flex-wrap: wrap; gap: 7px; padding-top: 24px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--muted); }
+    .workflow-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: clamp(25px, 5vw, 60px);
+      align-items: center;
+      margin-top: 18px;
+      padding: clamp(28px, 5vw, 62px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(22,34,58,.96), rgba(10,18,32,.96));
+    }
+    .eyebrow { margin: 0 0 12px; color: var(--accent2); font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    h1 { max-width: 16ch; margin: 0; font-size: clamp(39px, 6vw, 72px); line-height: 1.03; letter-spacing: -.055em; }
+    .dek { max-width: 720px; margin: 20px 0 0; color: #b4c2d4; font-size: clamp(17px, 2vw, 21px); }
+    .reviewed { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
+    .hero-principle { display: grid; gap: 10px; }
+    .principle {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(10,18,32,.7);
+    }
+    .principle b { display: block; margin-bottom: 3px; color: var(--text); }
+    .principle span { color: var(--muted); font-size: 14px; }
+    .article-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 34px; align-items: start; margin-top: 38px; }
+    .article { min-width: 0; }
+    .article section { scroll-margin-top: 92px; margin: 0 0 46px; }
+    .article h2 { margin: 0 0 14px; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.13; letter-spacing: -.035em; }
+    .article h3 { margin: 24px 0 8px; font-size: 20px; }
+    .article p { margin: 0 0 15px; color: #b4c2d4; }
+    .article li { margin-bottom: 9px; color: #b4c2d4; }
+    .article strong { color: var(--text); }
+    .role-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 21px; }
+    .role-card,
+    .decision-card,
+    .note-card,
+    .source-card,
+    .toc {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(22,34,58,.78);
+    }
+    .role-card { padding: 22px; }
+    .role-card h3 { margin-top: 0; }
+    .role-card ul { margin-bottom: 0; padding-left: 20px; }
+    .role-card.resolve { border-color: rgba(127,176,230,.42); }
+    .role-card.hyperraw { border-color: rgba(232,160,32,.42); }
+    .comparison { display: block; width: 100%; margin: 22px 0; overflow-x: auto; border-radius: 14px; }
+    .comparison table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 14px; }
+    .comparison th, .comparison td { padding: 13px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .comparison th { color: var(--text); background: rgba(127,176,230,.1); }
+    .comparison td { color: #b4c2d4; }
+    .comparison td:first-child { color: var(--text); font-weight: 750; }
+    .decision-list { display: grid; gap: 12px; margin-top: 20px; }
+    .decision-card { padding: 20px; }
+    .decision-card b { display: block; margin-bottom: 5px; }
+    .decision-card p { margin: 0; }
+    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+    .flow-step { position: relative; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #111c30; }
+    .flow-step b { display: block; margin-bottom: 5px; color: var(--accent2); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .flow-step span { color: #b4c2d4; font-size: 14px; }
+    .note-card { margin: 21px 0; padding: 20px; border-color: rgba(232,160,32,.42); background: rgba(232,160,32,.07); }
+    .note-card p:last-child { margin-bottom: 0; }
+    .toc { position: sticky; top: 94px; padding: 18px; }
+    .toc strong { display: block; margin-bottom: 9px; }
+    .toc a { display: block; padding: 7px 0; color: var(--muted); font-size: 13px; text-decoration: none; }
+    .toc a:hover { color: var(--text); }
+    .article-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .article-button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 10px 15px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-weight: 750; text-decoration: none; }
+    .article-button.primary { border-color: transparent; background: linear-gradient(135deg, #e8a020, #f4b03e); color: #0e1626; }
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 13px; background: rgba(10,18,32,.62); }
+    .faq-list summary { padding: 15px 17px; color: var(--text); cursor: pointer; font-weight: 750; }
+    .faq-list details p { padding: 0 17px 17px; }
+    .source-card { padding: 20px; }
+    .source-card ul { margin-bottom: 0; }
+    .source-card small { display: block; margin-top: 16px; color: var(--muted); }
+    @media (max-width: 900px) {
+      .workflow-hero, .article-grid { grid-template-columns: 1fr; }
+      .toc { position: static; grid-row: 1; }
+    }
+    @media (max-width: 700px) {
+      .role-grid, .flow { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .page-wrap { width: min(calc(100% - 26px), 1140px); }
+      .workflow-hero { border-radius: 21px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "HyperRAW and DaVinci Resolve: Different Tools, One Workflow",
+        "description": "A neutral guide to native BRAW post-production in DaVinci Resolve and focused conversion with HyperRAW.",
+        "image": "https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png",
+        "datePublished": "2026-07-29",
+        "dateModified": "2026-07-29",
+        "mainEntityOfPage": "https://louis-0hrs.github.io/HyperRAW/hyperraw-and-davinci-resolve.html",
+        "author": {"@type": "Organization", "name": "HyperRAW", "url": "https://louis-0hrs.github.io/HyperRAW/"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "HyperRAW",
+          "url": "https://louis-0hrs.github.io/HyperRAW/",
+          "logo": {"@type": "ImageObject", "url": "https://louis-0hrs.github.io/HyperRAW/HyperRAWlogo.png"}
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "HyperRAW", "item": "https://louis-0hrs.github.io/HyperRAW/"},
+          {"@type": "ListItem", "position": 2, "name": "HyperRAW and DaVinci Resolve", "item": "https://louis-0hrs.github.io/HyperRAW/hyperraw-and-davinci-resolve.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-nav-shell">
+      <a class="site-brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="">HyperRAW</a>
+      <nav class="site-nav-links" aria-label="Primary navigation">
+        <a href="index.html">Product</a>
+        <a href="braw-to-mp4.html">BRAW converter</a>
+        <a href="what-is-a-braw-file.html">What is BRAW?</a>
+        <a href="hyperraw-and-davinci-resolve.html" aria-current="page">Resolve workflow</a>
+        <a href="cli.html">CLI</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="site-nav-actions"><a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a><a href="index.html#license">Pricing</a></div>
+      <details class="site-mobile-menu">
+        <summary>Menu</summary>
+        <nav class="site-mobile-links" aria-label="Mobile navigation">
+          <a href="index.html">Product</a>
+          <a href="braw-to-mp4.html">BRAW converter</a>
+          <a href="what-is-a-braw-file.html">What is BRAW?</a>
+          <a href="hyperraw-and-davinci-resolve.html" aria-current="page">Resolve workflow</a>
+          <a href="cli.html">CLI &amp; automation</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a>
+          <a href="index.html#license">Pricing</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">HyperRAW</a><span aria-hidden="true">/</span><span>HyperRAW and DaVinci Resolve</span></nav>
+
+    <header class="workflow-hero">
+      <div>
+        <p class="eyebrow">Workflow guide</p>
+        <h1>Different tools. One BRAW workflow.</h1>
+        <p class="dek">DaVinci Resolve is a complete post-production environment. HyperRAW is a focused converter. The useful question is not which one “wins,” but which task needs to happen next.</p>
+        <p class="reviewed">Reviewed against current Blackmagic Design product documentation · July 29, 2026</p>
+      </div>
+      <div class="hero-principle" aria-label="Core positioning">
+        <div class="principle"><b>Keep BRAW native</b><span>When you need RAW controls, editing, grading, effects, audio, or finishing.</span></div>
+        <div class="principle"><b>Convert deliberately</b><span>When compatibility, a defined intermediate, batch preparation, or automation requires another format.</span></div>
+        <div class="principle"><b>Keep the original</b><span>A converted output is a new file, not a replacement for the camera master.</span></div>
+      </div>
+    </header>
+
+    <div class="article-grid">
+      <article class="article">
+        <section id="short-answer">
+          <h2>The short answer</h2>
+          <p><strong>HyperRAW does not replace DaVinci Resolve.</strong> Blackmagic Design describes Resolve as an integrated post-production application covering editing, color correction, visual effects, motion graphics, audio post-production, media organization, and delivery. Resolve also supports Blackmagic RAW natively and exposes non-destructive RAW adjustments.</p>
+          <p>HyperRAW has a narrower purpose: it reads BRAW media through the Blackmagic RAW SDK and creates separate output files for downstream workflows. Its interface and command-line tool focus on file selection, batch processing, defined output settings, and conversion without requiring a Resolve project.</p>
+          <div class="note-card">
+            <p><strong>No affiliation:</strong> HyperRAW is independently developed. Blackmagic RAW, BRAW, and DaVinci Resolve are referenced only to explain compatibility and workflow roles. Blackmagic Design has not sponsored, certified, or endorsed HyperRAW or this comparison.</p>
+          </div>
+        </section>
+
+        <section id="roles">
+          <h2>What each tool is designed to do</h2>
+          <div class="role-grid">
+            <article class="role-card resolve">
+              <h3>DaVinci Resolve</h3>
+              <p>A full creative and technical post-production environment.</p>
+              <ul>
+                <li>Media organization and project-based work</li>
+                <li>Cutting and timeline editing</li>
+                <li>Native BRAW controls and color grading</li>
+                <li>Visual effects and motion graphics through Fusion</li>
+                <li>Audio post-production through Fairlight</li>
+                <li>Finishing and delivery</li>
+              </ul>
+            </article>
+            <article class="role-card hyperraw">
+              <h3>HyperRAW</h3>
+              <p>A dedicated BRAW conversion step for Windows workflows.</p>
+              <ul>
+                <li>File and folder intake</li>
+                <li>Queued batch conversion</li>
+                <li>Consistent output settings across a batch</li>
+                <li>Delivery and intermediate output options</li>
+                <li>Local processing</li>
+                <li>Command-line use in scripts and scheduled jobs</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="comparison">
+          <h2>A factual scope comparison</h2>
+          <p>This table compares documented product roles. It is not a performance benchmark, quality ranking, or price comparison.</p>
+          <div class="comparison">
+            <table>
+              <thead><tr><th>Workflow need</th><th>DaVinci Resolve</th><th>HyperRAW</th></tr></thead>
+              <tbody>
+                <tr><td>Primary purpose</td><td>Integrated editing and post-production.</td><td>Focused BRAW conversion and batch preparation.</td></tr>
+                <tr><td>Working model</td><td>Projects, media pools, timelines, creative pages, and delivery jobs.</td><td>Files or folders, a queue, selected output settings, and conversion jobs.</td></tr>
+                <tr><td>Native BRAW adjustments</td><td>Blackmagic documents native BRAW support with non-destructive RAW controls.</td><td>Uses selected decode settings to create a new output; the output is no longer the original BRAW file.</td></tr>
+                <tr><td>Editing and color grading</td><td>Core documented capabilities.</td><td>Not provided; HyperRAW is not an editor or grading system.</td></tr>
+                <tr><td>VFX, motion graphics, and audio post</td><td>Provided through Resolve’s Fusion and Fairlight pages.</td><td>Not provided.</td></tr>
+                <tr><td>Dedicated command-line conversion</td><td>Resolve has its own broader workflow and automation ecosystem; consult Blackmagic’s current documentation for supported interfaces.</td><td>The Windows package includes <code>hyperraw_cli.exe</code> for explicit conversion jobs.</td></tr>
+                <tr><td>Resolve installation required</td><td>Resolve is the application itself.</td><td>No. HyperRAW uses the Blackmagic RAW SDK directly.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="choose">
+          <h2>Choose according to the next task</h2>
+          <div class="decision-list">
+            <article class="decision-card">
+              <b>Use DaVinci Resolve when the BRAW files are going into an edit or grade.</b>
+              <p>Keeping the camera originals native preserves Resolve’s documented BRAW controls and avoids an unnecessary intermediate generation.</p>
+            </article>
+            <article class="decision-card">
+              <b>Use HyperRAW when the required deliverable is a converted file rather than a creative project.</b>
+              <p>Examples include preparing media for software without BRAW support, producing a defined intermediate, generating review media, or applying one conversion setup to a batch.</p>
+            </article>
+            <article class="decision-card">
+              <b>Use both when conversion is one controlled step inside a larger post-production workflow.</b>
+              <p>HyperRAW can prepare specific handoff or review files while the verified BRAW originals remain available for native work in Resolve.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="workflows">
+          <h2>Three sensible workflow patterns</h2>
+
+          <h3>1. Native BRAW in Resolve</h3>
+          <div class="flow" aria-label="Native Resolve workflow">
+            <div class="flow-step"><b>Camera original</b><span>Copy and verify the BRAW media.</span></div>
+            <div class="flow-step"><b>DaVinci Resolve</b><span>Organize, edit, adjust RAW settings, grade, mix, and finish.</span></div>
+            <div class="flow-step"><b>Delivery</b><span>Render the required master or distribution files.</span></div>
+          </div>
+          <p>This is generally the direct path when Resolve is already the editing and finishing environment.</p>
+
+          <h3>2. HyperRAW before another system</h3>
+          <div class="flow" aria-label="Compatibility conversion workflow">
+            <div class="flow-step"><b>Camera original</b><span>Keep verified BRAW masters and backups.</span></div>
+            <div class="flow-step"><b>HyperRAW</b><span>Apply a defined decode and export configuration to selected files or a batch.</span></div>
+            <div class="flow-step"><b>Downstream tool</b><span>Use the supported intermediate, review, or delivery file.</span></div>
+          </div>
+          <p>This is useful when the receiving application, service, or person needs a format other than BRAW.</p>
+
+          <h3>3. Automated preparation</h3>
+          <div class="flow" aria-label="Automated workflow">
+            <div class="flow-step"><b>Orchestration</b><span>A script, service, or scheduled task identifies the source file.</span></div>
+            <div class="flow-step"><b>HyperRAW CLI</b><span>The job declares input, output directory, codec, and optional encoder settings.</span></div>
+            <div class="flow-step"><b>Next action</b><span>The surrounding workflow evaluates the exit code and continues, retries, or reports failure.</span></div>
+          </div>
+          <p>Resolve may also participate later in the creative workflow; the CLI step is simply a focused conversion primitive.</p>
+        </section>
+
+        <section id="quality">
+          <h2>What changes after conversion?</h2>
+          <p>A converted file is not “better BRAW.” It is a new representation created from the decoded source. Depending on the output codec, bit depth, chroma sampling, resolution, bitrate, and color settings, conversion can preserve substantial visible information or discard information that the original retained.</p>
+          <p>RAW adjustments can also become baked into the exported pixels. If the next stage is Resolve and the team expects to change BRAW decode settings, use the original BRAW media unless a documented workflow requirement says otherwise.</p>
+          <div class="note-card">
+            <p><strong>Archive principle:</strong> Keep verified BRAW camera originals when future re-grading, re-export, evidence, or archival value matters. Treat converted media as derivatives unless your own retention policy explicitly defines otherwise.</p>
+          </div>
+        </section>
+
+        <section id="faq">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list">
+            <details>
+              <summary>Does HyperRAW replace DaVinci Resolve?</summary>
+              <p>No. Resolve is a complete post-production application. HyperRAW is a focused converter for file, folder, batch, and command-line workflows.</p>
+            </details>
+            <details>
+              <summary>Do I need DaVinci Resolve installed to use HyperRAW?</summary>
+              <p>No. HyperRAW uses the Blackmagic RAW SDK directly and does not require Resolve to be installed.</p>
+            </details>
+            <details>
+              <summary>Should I convert BRAW before using DaVinci Resolve?</summary>
+              <p>Not by default. Resolve supports BRAW natively and exposes RAW controls. Convert only when a workflow requires a particular intermediate, review file, automated handoff, or compatibility with another system.</p>
+            </details>
+            <details>
+              <summary>Can HyperRAW output be used in DaVinci Resolve?</summary>
+              <p>Yes, when the selected output codec and container are supported by the installed Resolve version. The converted file is not the original BRAW camera file and may not retain the same RAW adjustment flexibility.</p>
+            </details>
+            <details>
+              <summary>Which tool should I use for color grading?</summary>
+              <p>DaVinci Resolve. HyperRAW can apply decode and export settings, but it is not positioned as a creative color-grading application.</p>
+            </details>
+          </div>
+        </section>
+
+        <section id="sources">
+          <h2>Sources and comparison policy</h2>
+          <div class="source-card">
+            <p>Resolve capabilities on this page are paraphrased from Blackmagic Design’s current product materials. HyperRAW capabilities are limited to functions documented by the product, its user guide, and its distributed command-line interface.</p>
+            <ul>
+              <li><a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank" rel="noopener">Blackmagic Design: DaVinci Resolve product overview</a></li>
+              <li><a href="https://www.blackmagicdesign.com/products/blackmagicraw/" target="_blank" rel="noopener">Blackmagic Design: Blackmagic RAW overview and Resolve integration</a></li>
+              <li><a href="HyperRAW_2026_User_Guide_EN.pdf" download>HyperRAW 2026 User Guide</a></li>
+              <li><a href="cli.html">HyperRAW CLI and automation reference</a></li>
+            </ul>
+            <small>No third-party benchmark, logo, screenshot, price, market-share claim, or qualitative superiority claim is used. Product capabilities can change; consult each vendor’s current documentation for the version installed in your environment. DaVinci Resolve, Blackmagic RAW, BRAW, Fusion, and Fairlight are names or trademarks associated with Blackmagic Design Pty. Ltd. Their use here is solely descriptive and does not imply affiliation or endorsement.</small>
+          </div>
+          <div class="article-cta">
+            <a class="article-button primary" href="braw-to-mp4.html">Explore focused BRAW conversion</a>
+            <a class="article-button" href="what-is-a-braw-file.html">Learn about the BRAW format</a>
+          </div>
+        </section>
+      </article>
+
+      <aside class="toc" aria-label="On this page">
+        <strong>On this page</strong>
+        <a href="#short-answer">The short answer</a>
+        <a href="#roles">Product roles</a>
+        <a href="#comparison">Scope comparison</a>
+        <a href="#choose">Which tool to choose</a>
+        <a href="#workflows">Workflow patterns</a>
+        <a href="#quality">After conversion</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <p class="site-footer-legal">Blackmagic RAW, BRAW, and DaVinci Resolve are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility and workflow roles. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
+  </footer>
+</body>
+</html>

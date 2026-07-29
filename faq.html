@@ -3,11 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HyperRAW - FAQ</title>
+  <title>HyperRAW FAQ – BRAW Conversion, Hardware &amp; Licensing</title>
   <meta name="description"
-      content="Frequently asked questions about HyperRAW: workflow, performance, GPU support, formats, licensing, and roadmap.">
-<meta name="author" content="HyperRAW">
+      content="Answers about HyperRAW BRAW conversion, supported hardware, output formats, free mode, licensing, privacy, troubleshooting, and planned features.">
+  <meta name="author" content="HyperRAW">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://louis-0hrs.github.io/HyperRAW/faq.html">
+  <meta property="og:site_name" content="HyperRAW">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="HyperRAW FAQ – BRAW Conversion, Hardware &amp; Licensing">
+  <meta property="og:description" content="Answers about BRAW conversion, hardware, output formats, free mode, licensing, privacy, and troubleshooting.">
+  <meta property="og:url" content="https://louis-0hrs.github.io/HyperRAW/faq.html">
+  <meta property="og:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HyperRAW – From BRAW to delivery-ready files.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HyperRAW FAQ – BRAW Conversion, Hardware &amp; Licensing">
+  <meta name="twitter:description" content="Answers about BRAW conversion, hardware, output formats, free mode, licensing, privacy, and troubleshooting.">
+  <meta name="twitter:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="HyperRAWlogo.png">
   <link rel="apple-touch-icon" href="HyperRAWlogo.png">
@@ -194,18 +209,40 @@
 
   </style>
   <link rel="stylesheet" href="hyperraw.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://louis-0hrs.github.io/HyperRAW/faq.html#webpage",
+        "url": "https://louis-0hrs.github.io/HyperRAW/faq.html",
+        "name": "HyperRAW FAQ – BRAW Conversion, Hardware & Licensing",
+        "description": "Answers about HyperRAW BRAW conversion, supported hardware, output formats, free mode, licensing, privacy, and troubleshooting.",
+        "isPartOf": {"@id": "https://louis-0hrs.github.io/HyperRAW/#website"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "HyperRAW", "item": "https://louis-0hrs.github.io/HyperRAW/"},
+          {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://louis-0hrs.github.io/HyperRAW/faq.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <a class="brand" href="index.html">
-        <span class="logo" aria-hidden="true"><img src="HyperRAWlogo.png" alt="HyperRAW logo" width="34"></span>
-        <b>HyperRAW</b>
-      </a>
-      <span class="chip">FAQ</span>
+  <header class="site-header">
+    <div class="site-nav-shell">
+      <a class="site-brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="">HyperRAW</a>
+      <nav class="site-nav-links" aria-label="Primary navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html" aria-current="page">FAQ</a></nav>
+      <div class="site-nav-actions"><a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a><a href="index.html#license">Pricing</a></div>
+      <details class="site-mobile-menu"><summary>Menu</summary><nav class="site-mobile-links" aria-label="Mobile navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI &amp; automation</a><a href="faq.html" aria-current="page">FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a><a href="index.html#license">Pricing</a></nav></details>
     </div>
-
+  </header>
+  <div class="wrap">
     <div class="hero">
       <h1>HyperRAW – FAQ</h1>
       <p class="sub">
@@ -231,6 +268,15 @@
         </details>
 
         <details class="faq">
+          <summary>What is a BRAW file?</summary>
+          <div class="faq-content">
+            A <span class="mono">.braw</span> file is a Blackmagic RAW camera-media file. It stores encoded image data together with
+            camera and lens metadata used during decoding and post-production. Read the sourced overview:
+            <a href="what-is-a-braw-file.html">What is a BRAW file?</a>
+          </div>
+        </details>
+
+        <details class="faq">
           <summary>What’s the typical workflow?</summary>
           <div class="faq-content">
             Drag &amp; drop one or multiple <span class="mono">.braw</span> files or folders, choose an output codec and settings,
@@ -241,7 +287,9 @@
         <details class="faq">
           <summary>Do I need DaVinci Resolve installed?</summary>
           <div class="faq-content">
-            No. HyperRAW uses the official Blackmagic RAW SDK directly and works independently of DaVinci Resolve.
+            No. HyperRAW uses the Blackmagic RAW SDK directly and works independently of DaVinci Resolve. Resolve remains
+            the more appropriate tool for native BRAW editing, grading, visual effects, audio post-production, and finishing.
+            See <a href="hyperraw-and-davinci-resolve.html">how HyperRAW and Resolve fit into the same workflow</a>.
           </div>
         </details>
 
@@ -313,9 +361,10 @@
         <details class="faq">
           <summary>How much does HyperRAW cost?</summary>
           <div class="faq-content">
-            HyperRAW is sold through Gumroad for €39. During July, use code <span class="mono">JULY-SALE</span>
-            for 20% off (€31.20). The free Windows mode never expires: every application start includes two successful UHD exports
-            without a watermark before you upgrade for larger jobs.
+            Gumroad displays the current license price and acts as merchant of record for the purchase. Through July 31, 2026,
+            code <span class="mono">JULY-SALE</span> gives 20% off the current Gumroad base price. Gumroad calculates any
+            location-dependent VAT or sales tax and shows the final total before payment. The free Windows mode never expires:
+            every application start includes two successful UHD exports without a watermark.
           </div>
         </details>
 
@@ -338,7 +387,9 @@
         <details class="faq">
           <summary>Does HyperRAW require an internet connection?</summary>
           <div class="faq-content">
-            An internet connection is required to activate a Gumroad license. After activation, conversion itself runs locally and offline.
+            Online access is required to activate a Gumroad license. During the first weeks after activation, HyperRAW
+            also connects periodically to Gumroad to verify the license key and refund status. Media conversion itself
+            runs locally.
           </div>
         </details>
 
@@ -378,23 +429,11 @@
       </div>
     </div>
 
-    <footer>
-      <div>© HyperRAW</div>
-      <div class="small">
-        <a href="index.html">Home</a>
-        <a href="faq.html">FAQ</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="legal.html">Legal</a>
-      </div>
-      <footer class="legal">
-        <p>
-          Blackmagic RAW® is a registered trademark of Blackmagic Design Pty. Ltd.<br>
-          HyperRAW is an independent product and is not affiliated with or endorsed by Blackmagic Design.
-        </p>
-      </footer>
-    </footer>
-
   </div>
+  <footer class="site-footer">
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
+  </footer>
 </body>
 </html>

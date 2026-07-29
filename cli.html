@@ -6,6 +6,21 @@
   <title>HyperRAW CLI – BRAW Automation for Windows</title>
   <meta name="description" content="Use the included HyperRAW command-line tool to automate BRAW conversion in scripts, server-side jobs, and repeatable processing workflows.">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://louis-0hrs.github.io/HyperRAW/cli.html">
+  <meta property="og:site_name" content="HyperRAW">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="HyperRAW CLI – BRAW Automation for Windows">
+  <meta property="og:description" content="Automate BRAW conversion with the command-line tool included in the HyperRAW Windows package.">
+  <meta property="og:url" content="https://louis-0hrs.github.io/HyperRAW/cli.html">
+  <meta property="og:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HyperRAW – From BRAW to delivery-ready files.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HyperRAW CLI – BRAW Automation for Windows">
+  <meta name="twitter:description" content="Automate BRAW conversion with the command-line tool included in the HyperRAW Windows package.">
+  <meta name="twitter:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
   <link rel="icon" type="image/png" href="HyperRAWlogo.png">
   <link rel="stylesheet" href="hyperraw.css">
   <style>
@@ -54,10 +69,47 @@
     footer { margin-top: 46px; padding: 23px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     @media (max-width: 700px) { .grid, .grid.two, .option-grid, .exit-codes { grid-template-columns: 1fr; } .wrap { width: min(calc(100% - 26px), 1140px); } .status { display: none; } .header-actions { gap: 0; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "HyperRAW CLI – BRAW Automation for Windows",
+        "description": "How to automate BRAW conversion with the command-line tool included in the HyperRAW Windows package.",
+        "image": "https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png",
+        "datePublished": "2026-07-29",
+        "dateModified": "2026-07-29",
+        "mainEntityOfPage": "https://louis-0hrs.github.io/HyperRAW/cli.html",
+        "author": {"@type": "Organization", "name": "HyperRAW", "url": "https://louis-0hrs.github.io/HyperRAW/"},
+        "publisher": {
+          "@type": "Organization",
+          "name": "HyperRAW",
+          "url": "https://louis-0hrs.github.io/HyperRAW/",
+          "logo": {"@type": "ImageObject", "url": "https://louis-0hrs.github.io/HyperRAW/HyperRAWlogo.png"}
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "HyperRAW", "item": "https://louis-0hrs.github.io/HyperRAW/"},
+          {"@type": "ListItem", "position": 2, "name": "CLI and automation", "item": "https://louis-0hrs.github.io/HyperRAW/cli.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-nav-shell">
+      <a class="site-brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="">HyperRAW</a>
+      <nav class="site-nav-links" aria-label="Primary navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html" aria-current="page">CLI</a><a href="faq.html">FAQ</a></nav>
+      <div class="site-nav-actions"><a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a><a href="index.html#license">Pricing</a></div>
+      <details class="site-mobile-menu"><summary>Menu</summary><nav class="site-mobile-links" aria-label="Mobile navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html" aria-current="page">CLI &amp; automation</a><a href="faq.html">FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a><a href="index.html#license">Pricing</a></nav></details>
+    </div>
+  </header>
   <div class="wrap">
-    <header><a class="brand" href="index.html"><img src="HyperRAWlogo.png" alt="HyperRAW logo">HyperRAW</a><div class="header-actions"><span class="status">Included with Windows</span><a class="back" href="index.html">← Back to home</a></div></header>
     <main>
       <section class="hero"><p class="eyebrow">CLI &amp; automation</p><h1>Bring BRAW conversion into your workflow.</h1><p class="lead">The Windows package includes <code>hyperraw_cli.exe</code>: a real command-line converter for scripts, servers, scheduled jobs, and agentic media pipelines. Give it a BRAW file, an existing output folder, and a codec—then make conversion a dependable building block in your own system.</p><div class="actions"><a class="button primary" href="https://github.com/louis-0hrs/HyperRAW/releases">Download for Windows</a><a class="button" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide</a></div></section>
 
@@ -79,7 +131,11 @@ Get-ChildItem 'C:\incoming' -Filter *.braw | ForEach-Object {
 
       <section class="card support"><h2>Need the complete reference?</h2><p>The User Guide includes the CLI quick start. On any installed release, run <code>hyperraw_cli.exe --help</code> to see the exact argument reference for that version.</p><div class="actions"><a class="button" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a class="button" href="mailto:HyperRAW.app@gmail.com">Ask a workflow question</a></div></section>
     </main>
-    <footer>HyperRAW is an independent product and is not affiliated with or endorsed by Blackmagic Design.</footer>
   </div>
+  <footer class="site-footer">
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
+  </footer>
 </body>
 </html>

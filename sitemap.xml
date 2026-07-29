@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/</loc><lastmod>2026-07-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/braw-to-mp4.html</loc><lastmod>2026-07-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/cli.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/faq.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/impressum.html</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/privacy.html</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://louis-0hrs.github.io/HyperRAW/legal.html</loc><lastmod>2026-07-25</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/braw-to-mp4.html</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/what-is-a-braw-file.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/hyperraw-and-davinci-resolve.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/cli.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/faq.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/impressum.html</loc><lastmod>2026-07-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/privacy.html</loc><lastmod>2026-07-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://louis-0hrs.github.io/HyperRAW/legal.html</loc><lastmod>2026-07-29</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
