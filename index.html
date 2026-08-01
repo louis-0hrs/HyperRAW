@@ -34,7 +34,6 @@
       --line: #2b3850;
       --accent: #e8a020;
       --accent-2: #7fb0e6;
-      --sale: #e8a020;
       --radius: 20px;
       --max: 1140px;
     }
@@ -59,14 +58,7 @@
     .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; font-size: 23px; font-weight: 760; }
     .brand img { width: 42px; height: 42px; border-radius: 13px; box-shadow: 0 9px 22px rgba(232,160,32,.26); }
     .status { color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; font-size: 14px; white-space: nowrap; }
-    .sale-banner {
-      display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
-      margin-bottom: 18px; padding: 11px 18px; border: 1px solid rgba(255,207,107,.38);
-      border-radius: 14px; background: linear-gradient(90deg, rgba(232,160,32,.19), rgba(127,176,230,.16));
-      color: #ffe4a9; font-size: 14px;
-    }
-    .sale-banner strong { color: #fff2cd; letter-spacing: .04em; }
-    .sale-code { padding: 2px 8px; border-radius: 6px; background: rgba(9,11,16,.48); color: #fff; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+
     .hero {
       display: grid; grid-template-columns: 1.04fr .96fr; gap: 28px; align-items: center;
       padding: clamp(26px, 3.5vw, 44px); border: 1px solid var(--line); border-radius: 28px;
@@ -113,7 +105,6 @@
     .license-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     .license { padding: 27px; }
     .license.featured { position: relative; overflow: hidden; border-color: rgba(232,160,32,.65); background: linear-gradient(135deg, rgba(232,160,32,.18), rgba(22,34,58,.94)); }
-    .license.featured::after { content: "JULY SALE"; position: absolute; top: 16px; right: -29px; transform: rotate(36deg); padding: 4px 33px; background: var(--sale); color: #251e11; font-size: 11px; font-weight: 850; letter-spacing: .08em; }
     .plan-label { color: var(--accent-2); font-size: 13px; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
     .license h3 { margin: 8px 0; font-size: 25px; }
     .price { margin: 10px 0 16px; font-size: 32px; font-weight: 800; letter-spacing: -.04em; }
@@ -221,9 +212,7 @@
   </header>
   <div class="wrap">
     <main>
-      <div class="sale-banner" role="note">
-        <strong>JULY SALE · 20% OFF</strong><span>Use code</span><span class="sale-code">JULY-SALE</span><button class="copy-code sale-copy" type="button" data-code="JULY-SALE" aria-live="polite">Copy code</button><span>Ends July 31, 2026 · Current price and final tax-inclusive total are shown on Gumroad</span>
-      </div>
+
 
       <section class="hero" aria-labelledby="hero-title">
         <div>
@@ -231,14 +220,11 @@
           <h1 id="hero-title">From BRAW to delivery-ready files.</h1>
           <p class="lead">HyperRAW converts Blackmagic RAW footage locally, quickly, and reliably—built for high-resolution batch workflows on Windows.</p>
           <div class="tags" aria-label="Product highlights"><span class="tag">Windows 10 / 11</span><span class="tag">CUDA · OpenCL · CPU</span><span class="tag">NVIDIA · AMD · Intel</span></div>
-          <div class="purchase-offer" aria-label="July license offer">
+          <div class="purchase-offer" aria-label="HyperRAW license offer">
             <div class="offer-actions">
               <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
-              <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
             </div>
-            <p class="offer-price">20% off the current Gumroad base price.</p>
             <p class="offer-tax"><strong>Price transparency:</strong> Gumroad displays the current price, calculates any location-dependent VAT or sales tax, and shows the final total before payment.</p>
-            <p class="offer-deadline">Code valid through July 31, 2026.</p>
           </div>
           <div class="actions">
             <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Try free on Windows</a>
@@ -269,16 +255,13 @@
           <article class="card license featured">
             <p class="plan-label">Full version</p>
             <h3>HyperRAW license</h3>
-            <p class="price">20% off <span>through July 31, 2026</span></p>
+            <p class="price">Full version <span>one-time purchase</span></p>
             <ul><li>Unrestricted full-resolution exports</li><li>Large batch workflows</li><li>Advanced formats and production options</li></ul>
-            <div class="purchase-offer compact" aria-label="July license offer">
+            <div class="purchase-offer compact" aria-label="HyperRAW license offer">
               <div class="offer-actions">
                 <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
-                <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
               </div>
-              <p class="offer-price">20% off the current Gumroad base price.</p>
               <p class="offer-tax">Gumroad shows the current price, applicable tax, and final total before payment.</p>
-              <p class="offer-deadline">Code valid through July 31, 2026.</p>
             </div>
           </article>
         </div>
@@ -304,19 +287,6 @@
     <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
     <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
   </footer>
-  <script>
-    document.querySelectorAll('.copy-code').forEach((button) => {
-      button.addEventListener('click', async () => {
-        const original = button.textContent;
-        try {
-          await navigator.clipboard.writeText(button.dataset.code);
-          button.textContent = 'Copied!';
-        } catch {
-          button.textContent = 'Copy: JULY-SALE';
-        }
-        window.setTimeout(() => { button.textContent = original; }, 1800);
-      });
-    });
-  </script>
+
 </body>
 </html>

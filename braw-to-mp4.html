@@ -426,14 +426,11 @@
               <a class="btn" href="#faq">Read FAQ</a>
             </div>
 
-            <div class="purchase-offer" aria-label="July license offer">
+            <div class="purchase-offer" aria-label="HyperRAW license offer">
               <div class="offer-actions">
                 <a class="btn primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=braw-to-mp4" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
-                <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
               </div>
-              <p class="offer-price">20% off the current Gumroad base price.</p>
               <p class="offer-tax"><strong>Price transparency:</strong> Gumroad displays the current price, calculates any location-dependent VAT or sales tax, and shows the final total before payment.</p>
-              <p class="offer-deadline">Code valid through July 31, 2026.</p>
             </div>
 
             <div class="promise">
@@ -451,7 +448,7 @@
               <li class="kItem"><b>Free forever</b><span>2 UHD exports every app start · no account or expiry</span></li>
               <li class="kItem"><b>Outputs</b><span>MP4 and MOV (common delivery formats)</span></li>
               <li class="kItem"><b>Use case</b><span>Batch conversion for fast turnaround</span></li>
-              <li class="kItem"><b>Full version · 20% off in July</b><span>Use code JULY-SALE; Gumroad shows the current price and final tax-inclusive total</span></li>
+              <li class="kItem"><b>Full version</b><span>Gumroad shows the current price and final tax-inclusive total</span></li>
             </ul>
           </aside>
         </div>
@@ -495,14 +492,11 @@
             <li>Larger batch workloads and advanced workflows</li>
           </ul>
           <p class="note">Keep the free mode for quick UHD conversions. Upgrade when your pipeline grows.</p>
-          <div class="purchase-offer" aria-label="July license offer">
+          <div class="purchase-offer" aria-label="HyperRAW license offer">
             <div class="offer-actions">
               <a class="btn primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=braw-to-mp4" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
-              <span class="offer-code"><span>Code</span><code>JULY-SALE</code><button class="copy-code" type="button" data-code="JULY-SALE" aria-live="polite">Copy</button></span>
             </div>
-            <p class="offer-price">20% off the current Gumroad base price.</p>
             <p class="offer-tax">Gumroad shows the current price, applicable tax, and final total before payment.</p>
-            <p class="offer-deadline">Code valid through July 31, 2026.</p>
           </div>
         </div>
       </section>
@@ -582,19 +576,6 @@
     <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
     <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
   </footer>
-  <script>
-    document.querySelectorAll('.copy-code').forEach((button) => {
-      button.addEventListener('click', async () => {
-        const original = button.textContent;
-        try {
-          await navigator.clipboard.writeText(button.dataset.code);
-          button.textContent = 'Copied!';
-        } catch {
-          button.textContent = 'Copy: JULY-SALE';
-        }
-        window.setTimeout(() => { button.textContent = original; }, 1800);
-      });
-    });
-  </script>
+
 </body>
 </html>

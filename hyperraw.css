@@ -11,7 +11,6 @@
   --accent: #e8a020;
   --accent2: #7fb0e6;
   --accent-2: #7fb0e6;
-  --sale: #e8a020;
 }
 
 body {
@@ -182,51 +181,7 @@ a:focus-visible {
   margin: 0;
 }
 
-.offer-code {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 48px;
-  padding: 9px 12px;
-  border: 1px dashed rgba(127, 176, 230, .58);
-  border-radius: 12px;
-  background: rgba(10, 18, 32, .72);
-  color: var(--text);
-}
-
-.offer-code code {
-  color: var(--accent2);
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.offer-code button {
-  padding: 6px 9px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #202a3b;
-  color: var(--text);
-  cursor: pointer;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 750;
-}
-
-.offer-price {
-  margin: 0;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 750;
-}
-
-.offer-price s {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.offer-tax,
-.offer-deadline {
+.offer-tax {
   margin: 0;
   color: var(--muted);
   font-size: 12px;
@@ -302,13 +257,8 @@ a:focus-visible {
   }
 
   .offer-actions .button,
-  .offer-actions .btn,
-  .offer-code {
+  .offer-actions .btn {
     width: 100%;
-  }
-
-  .offer-code {
-    justify-content: space-between;
   }
 
   .site-footer {
