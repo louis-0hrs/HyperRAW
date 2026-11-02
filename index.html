@@ -120,6 +120,13 @@
     .coupon code { padding: 6px 8px; border-radius: 5px; color: #ffe4a9; background: rgba(232,160,32,.12); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; font-weight: 700; }
     .copy-code { border: 1px solid #4d6280; border-radius: 6px; padding: 6px 9px; color: var(--text); background: #202a3b; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
     .copy-code:hover { border-color: var(--accent); color: var(--accent); }
+    .release { padding: 27px; }
+    .release-header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .release-header h3 { margin: 0; font-size: 21px; }
+    .release-header span { color: var(--accent-2); font-size: 13px; font-weight: 700; }
+    .release ul { display: grid; gap: 8px; padding-left: 20px; color: var(--muted); font-size: 14px; }
+    .release p { color: var(--muted); font-size: 14px; }
+    .release a { color: var(--text); text-underline-offset: 3px; }
     .requirements { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
     .requirement { padding: 22px; }
     .requirement h3 { margin: 0 0 10px; font-size: 17px; }
@@ -152,6 +159,7 @@
     }
   </style>
   <link rel="stylesheet" href="hyperraw.css">
+  <script src="sale.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -192,7 +200,7 @@
         <a href="faq.html">FAQ</a>
       </nav>
       <div class="site-nav-actions">
-        <a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a>
+        <a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a>
         <a href="#license">Pricing</a>
       </div>
       <details class="site-mobile-menu">
@@ -204,7 +212,7 @@
           <a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a>
           <a href="cli.html">CLI &amp; automation</a>
           <a href="faq.html">FAQ</a>
-          <a href="https://github.com/louis-0hrs/HyperRAW/releases">Free download</a>
+          <a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a>
           <a href="#license">Pricing</a>
         </nav>
       </details>
@@ -221,17 +229,19 @@
           <p class="lead">HyperRAW converts Blackmagic RAW footage locally, quickly, and reliably—built for high-resolution batch workflows on Windows.</p>
           <div class="tags" aria-label="Product highlights"><span class="tag">Windows 10 / 11</span><span class="tag">CUDA · OpenCL · CPU</span><span class="tag">NVIDIA · AMD · Intel</span></div>
           <div class="purchase-offer" aria-label="HyperRAW license offer">
+            <p class="offer-sale" data-black-friday hidden><strong>Black Friday: 25% off HyperRAW</strong><br>November 26–30, 2026 (CET). Automatically applied on Gumroad during the sale. Code: <code>BLACKFRIDAY26</code></p>
             <div class="offer-actions">
               <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
             </div>
             <p class="offer-tax"><strong>Price transparency:</strong> Gumroad displays the current price, calculates any location-dependent VAT or sales tax, and shows the final total before payment.</p>
           </div>
           <div class="actions">
-            <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Try free on Windows</a>
+            <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download for Windows (.exe)</a>
           </div>
+          <p class="hero-note">Version <b>2026.11.0</b> · Windows x64 · Direct installer download · <a href="#changelog">What’s new</a></p>
           <p class="hero-note"><b>Free forever:</b> every app start includes two successful UHD exports without a watermark—no account and no expiry.</p>
           <a class="cli-cta" href="cli.html"><span><b>CLI &amp; automation</b><small>Included with the Windows package</small></span><strong>For servers, scripts &amp; agentic workflows →</strong></a>
-          <div class="utility-links"><a href="what-is-a-braw-file.html">What is a BRAW file?</a><a href="faq.html">Read the FAQ</a><a href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
+          <div class="utility-links"><a href="what-is-a-braw-file.html">What is a BRAW file?</a><a href="faq.html">Read the FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
         </div>
         <figure class="product-shot">
           <img src="HyperRAW-2026-interface.png" alt="HyperRAW 2026 on Windows, showing the BRAW file queue and export settings" width="1556" height="1124">
@@ -251,13 +261,14 @@
       <section id="license" aria-labelledby="license-title">
         <div class="section-heading"><h2 id="license-title">Free forever. Upgrade when the job gets bigger.</h2><p>Every app start includes two free UHD exports. Unlock the full workflow when you need uninterrupted batches or full resolution.</p></div>
         <div class="license-grid">
-          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">Free <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases">Download for Windows</a></article>
+          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">Free <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download for Windows</a></article>
           <article class="card license featured">
             <p class="plan-label">Full version</p>
             <h3>HyperRAW license</h3>
             <p class="price">Full version <span>one-time purchase</span></p>
             <ul><li>Unrestricted full-resolution exports</li><li>Large batch workflows</li><li>Advanced formats and production options</li></ul>
             <div class="purchase-offer compact" aria-label="HyperRAW license offer">
+              <p class="offer-sale" data-black-friday hidden><strong>Black Friday: 25% off HyperRAW</strong><br>November 26–30, 2026 (CET). Automatically applied on Gumroad during the sale. Code: <code>BLACKFRIDAY26</code></p>
               <div class="offer-actions">
                 <a class="button primary" href="https://haldoro.gumroad.com/l/HyperRAW?utm_source=hyperraw-site&amp;utm_medium=organic&amp;utm_campaign=homepage" target="_blank" rel="noopener">Get HyperRAW on Gumroad</a>
               </div>
@@ -265,6 +276,21 @@
             </div>
           </article>
         </div>
+      </section>
+
+      <section id="changelog" aria-labelledby="changelog-title">
+        <div class="section-heading"><h2 id="changelog-title">What’s new</h2><p>Latest HyperRAW release for Windows.</p></div>
+        <article class="card release">
+          <div class="release-header"><h3>HyperRAW 2026.11.0</h3><span>Windows x64</span></div>
+          <ul>
+            <li>CLI: extract metadata and frames, inspect devices, follow JSON or JSONL progress, and manage licenses.</li>
+            <li>Encoder test encodes, improved OpenCL detection, and CPU fallback.</li>
+            <li>Fixes for trial scaling and watermarks, image-sequence progress, and themes and dialogs.</li>
+            <li>Translation improvements and FFmpeg build and packaging updates.</li>
+          </ul>
+          <p>The installer is unsigned, so Windows SmartScreen may display a warning.</p>
+          <div class="actions"><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download 2026.11.0 for Windows x64</a><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/tag/v2026.11.0">Full release notes</a></div>
+        </article>
       </section>
 
       <section aria-labelledby="requirements-title">
@@ -277,7 +303,7 @@
       </section>
 
       <section class="card support" aria-labelledby="support-title">
-        <div><h2 id="support-title">Questions before you start?</h2><p>Read the guide for formats and workflows, or email us if you need help choosing the right setup.</p><div class="actions"><a class="button" href="HyperRAW_2026_User_Guide_EN.pdf" download>Download User Guide (PDF)</a><a class="button primary" href="mailto:HyperRAW.app@gmail.com?subject=HyperRAW%20question">Email HyperRAW support</a></div></div>
+        <div><h2 id="support-title">Questions before you start?</h2><p>Read the guide for formats and workflows, or email us if you need help choosing the right setup.</p><div class="actions"><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download User Guide (PDF)</a><a class="button primary" href="mailto:HyperRAW.app@gmail.com?subject=HyperRAW%20question">Email HyperRAW support</a></div></div>
       </section>
     </main>
 

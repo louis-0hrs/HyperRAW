@@ -192,6 +192,16 @@ a:focus-visible {
   color: var(--text);
 }
 
+.offer-sale {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.offer-sale strong { color: #ffe4a9; }
+.offer-sale code { color: #ffe4a9; overflow-wrap: anywhere; }
+
 .site-footer {
   display: grid;
   grid-template-columns: minmax(190px, .8fr) minmax(260px, 1.2fr);
