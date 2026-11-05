@@ -208,7 +208,7 @@
 
 
   </style>
-  <link rel="stylesheet" href="hyperraw.css">
+  <link rel="stylesheet" href="hyperraw.css?v=20261105c">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -238,8 +238,8 @@
     <div class="site-nav-shell">
       <a class="site-brand" href="index.html" aria-label="HyperRAW home"><img src="HyperRAWlogo.png" alt="">HyperRAW</a>
       <nav class="site-nav-links" aria-label="Primary navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html" aria-current="page">FAQ</a></nav>
-      <div class="site-nav-actions"><a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a><a href="index.html#license">Pricing</a></div>
-      <details class="site-mobile-menu"><summary>Menu</summary><nav class="site-mobile-links" aria-label="Mobile navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI &amp; automation</a><a href="faq.html" aria-current="page">FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a><a href="index.html#license">Pricing</a></nav></details>
+      <div class="site-nav-actions"><a href="index.html#downloads">Free download</a><a href="index.html#license">Pricing</a></div>
+      <details class="site-mobile-menu"><summary>Menu</summary><nav class="site-mobile-links" aria-label="Mobile navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI &amp; automation</a><a href="faq.html" aria-current="page">FAQ</a><a href="index.html#downloads">Free download</a><a href="index.html#license">Pricing</a></nav></details>
     </div>
   </header>
   <div class="wrap">
@@ -251,7 +251,7 @@
 
       <div class="row">
         <a class="btn primary" href="index.html">← Back to Home</a>
-        <a class="btn" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download User Guide (PDF)</a>
+        <a class="btn" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download Windows User Guide (PDF)</a>
         <a class="btn" href="mailto:HyperRAW.app@gmail.com">Contact: HyperRAW.app@gmail.com</a>
         <span class="hint">This page uses no analytics or tracking scripts.</span>
       </div>
@@ -296,8 +296,10 @@
         <details class="faq">
           <summary>Which operating systems are supported?</summary>
           <div class="faq-content">
-            HyperRAW is currently available for Windows 10 and Windows 11. macOS and Linux versions are planned;
-            no release date has been announced yet.
+            HyperRAW is available for Windows 10/11 x64 and Apple silicon Macs (arm64) running macOS 13 or later.
+            Intel Macs are not supported by the current Mac release. Linux is planned.
+            <a href="index.html#downloads">Choose your download</a>.
+            See the setup guides for <a href="braw-converter-windows.html">Windows BRAW conversion</a> and <a href="braw-converter-mac.html">Mac BRAW conversion</a>.
           </div>
         </details>
 
@@ -317,6 +319,7 @@
             <ul>
               <li><b>CUDA:</b> available for NVIDIA GPUs</li>
               <li><b>OpenCL:</b> available for compatible AMD, Intel, and NVIDIA GPUs</li>
+              <li><b>Metal:</b> available on Apple silicon Macs</li>
               <li><b>CPU:</b> available when no suitable GPU is present or selected</li>
             </ul>
             HyperRAW detects the available backends and lets you use Auto or select a compatible processing device.
@@ -326,7 +329,7 @@
         <details class="faq">
           <summary>Does HyperRAW support multiple GPUs?</summary>
           <div class="faq-content">
-            HyperRAW detects available CUDA, OpenCL, and CPU backends. Use Auto for hardware detection or select a compatible backend
+            HyperRAW detects available CUDA, OpenCL, Metal, and CPU backends depending on the platform. Use Auto for hardware detection or select a compatible backend
             and device explicitly. Available options and performance depend on your hardware, drivers, and selected export settings.
           </div>
         </details>
@@ -345,7 +348,7 @@
           <div class="faq-content">
             HyperRAW supports H.264, H.265 (HEVC), AV1, VP9, ProRes-compatible, CineForm-compatible, and FFV1 video output.
             It also supports JPEG, PNG, TIFF, JPEG-XR, OpenEXR, DPX, and Linear-DNG image sequences, plus WAV audio extraction.
-            The available encoder options depend on your system and installed components.
+            macOS also offers native Apple ProRes separately from FFmpeg software ProRes. The available encoder options depend on your system and installed components.
           </div>
         </details>
 
@@ -362,7 +365,7 @@
           <summary>How much does HyperRAW cost?</summary>
           <div class="faq-content">
             Gumroad displays the current license price and acts as merchant of record for the purchase. Gumroad calculates any
-            location-dependent VAT or sales tax and shows the final total before payment. The free Windows mode never expires:
+            location-dependent VAT or sales tax and shows the final total before payment. The free mode on Windows and macOS never expires:
             every application start includes two successful UHD exports without a watermark.
           </div>
         </details>
@@ -395,7 +398,8 @@
         <details class="faq">
           <summary>Is there a command-line interface for automation?</summary>
           <div class="faq-content">
-            Yes. The Windows package includes <span class="mono">bin\hyperraw_cli.exe</span> for scripts, scheduled jobs,
+            Yes. Windows includes <span class="mono">bin\hyperraw_cli.exe</span>, and the Mac app includes
+            <span class="mono">Contents/MacOS/hyperraw_cli</span>. Use them for scripts, scheduled jobs,
             server-side processing, and agentic media workflows. See the <a href="cli.html">CLI &amp; automation page</a> for examples.
           </div>
         </details>
@@ -405,7 +409,7 @@
         <details class="faq">
           <summary>What features are planned?</summary>
           <div class="faq-content">
-            Planned: macOS and Linux versions, additional output options, and ongoing performance improvements.
+            Planned: Linux support, additional output options, and ongoing performance improvements.
             Exact timelines are not fixed.
           </div>
         </details>
@@ -430,8 +434,8 @@
 
   </div>
   <footer class="site-footer">
-    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
-    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows and macOS.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a><a href="braw-converter-windows.html">BRAW on Windows</a><a href="braw-converter-mac.html">BRAW on Mac</a></nav>
     <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
   </footer>
 </body>

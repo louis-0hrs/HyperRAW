@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HyperRAW – BRAW Converter for Windows</title>
-  <meta name="description" content="HyperRAW is a high-performance BRAW converter for Windows. Try it free for UHD conversions, or unlock full-resolution batch workflows through Gumroad.">
+  <title>HyperRAW – BRAW Converter for Windows &amp; macOS</title>
+  <meta name="description" content="HyperRAW converts BRAW on Windows and Apple silicon Macs. Download for free UHD exports, fast batch workflows, native Apple ProRes, and CLI automation.">
   <meta name="author" content="HyperRAW">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://louis-0hrs.github.io/HyperRAW/">
   <meta property="og:site_name" content="HyperRAW">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="HyperRAW – BRAW Converter for Windows">
-  <meta property="og:description" content="Convert BRAW locally on Windows with free UHD exports, batch workflows, and an included command-line tool.">
+  <meta property="og:title" content="HyperRAW – BRAW Converter for Windows &amp; macOS">
+  <meta property="og:description" content="Convert BRAW locally on Windows and Apple silicon Macs with free UHD exports, batch workflows, and CLI automation.">
   <meta property="og:url" content="https://louis-0hrs.github.io/HyperRAW/">
   <meta property="og:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="HyperRAW – From BRAW to delivery-ready files.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HyperRAW – BRAW Converter for Windows">
-  <meta name="twitter:description" content="Convert BRAW locally on Windows with free UHD exports, batch workflows, and an included command-line tool.">
+  <meta name="twitter:title" content="HyperRAW – BRAW Converter for Windows &amp; macOS">
+  <meta name="twitter:description" content="Convert BRAW locally on Windows and Apple silicon Macs with free UHD exports, batch workflows, and CLI automation.">
   <meta name="twitter:image" content="https://louis-0hrs.github.io/HyperRAW/og-hyperraw.png">
   <link rel="icon" type="image/png" href="HyperRAWlogo.png">
   <link rel="apple-touch-icon" href="HyperRAWlogo.png">
@@ -89,9 +89,18 @@
     .cli-cta strong { color: #b8d8ff; font-size: 13px; text-align: right; }
     .utility-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 17px; font-size: 14px; color: var(--muted); }
     .utility-links a { text-underline-offset: 3px; }
-    .product-shot { margin: 0; padding: 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 17px; background: #090d16; box-shadow: 0 18px 34px rgba(0,0,0,.3); }
-    .product-shot img { display: block; width: 100%; height: auto; border-radius: 10px; }
-    .product-shot figcaption { padding: 10px 4px 2px; color: var(--muted); font-size: 12px; }
+    .hero-visual { min-width: 0; display: grid; gap: 28px; align-self: stretch; align-content: center; }
+    .platform-launch { padding: 22px 22px 0; border: 1px solid rgba(127,176,230,.3); border-radius: 18px; background: linear-gradient(135deg, rgba(127,176,230,.12), rgba(22,34,58,.35)); overflow: hidden; }
+    .platform-launch h2 { margin: 0 0 6px; font-size: 27px; letter-spacing: -.03em; }
+    .platform-launch p { margin: 0; color: var(--muted); font-size: 13px; }
+    .window-detail { display: block; margin-top: 20px; aspect-ratio: 2.7; overflow: hidden; }
+    .window-detail img { display: block; width: 160%; max-width: none; height: auto; }
+    .download-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; scroll-margin-top: 100px; }
+    .download-options a { flex-direction: column; align-items: flex-start; gap: 4px; padding: 13px 15px; font-size: 14px; }
+    .download-options small { color: var(--muted); font-size: 11px; font-weight: 500; }
+    .release + .release { margin-top: 16px; }
+    .download-info { font-size: 12px; color: var(--muted); }
+    .download-info a { text-underline-offset: 3px; }
     section { margin-top: 50px; }
     .section-heading { max-width: 620px; margin-bottom: 20px; }
     .section-heading h2 { margin: 0; font-size: clamp(28px, 3vw, 38px); letter-spacing: -.03em; }
@@ -154,11 +163,12 @@
       .license-grid { grid-template-columns: 1fr; }
       .support { align-items: flex-start; flex-direction: column; }
       .button { width: 100%; }
+      .download-options { grid-template-columns: 1fr; }
       .cli-cta { align-items: flex-start; flex-direction: column; }
       .cli-cta strong { text-align: left; }
     }
   </style>
-  <link rel="stylesheet" href="hyperraw.css">
+  <link rel="stylesheet" href="hyperraw.css?v=20261105c">
   <script src="sale.js" defer></script>
   <script type="application/ld+json">
   {
@@ -169,7 +179,7 @@
         "@id": "https://louis-0hrs.github.io/HyperRAW/#website",
         "url": "https://louis-0hrs.github.io/HyperRAW/",
         "name": "HyperRAW",
-        "description": "A local BRAW converter for Windows with free UHD exports, batch workflows, and a command-line tool.",
+        "description": "A local BRAW converter for Windows and macOS with free UHD exports, batch workflows, and a command-line tool.",
         "inLanguage": "en"
       },
       {
@@ -200,7 +210,7 @@
         <a href="faq.html">FAQ</a>
       </nav>
       <div class="site-nav-actions">
-        <a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a>
+        <a href="#downloads">Free download</a>
         <a href="#license">Pricing</a>
       </div>
       <details class="site-mobile-menu">
@@ -212,7 +222,7 @@
           <a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a>
           <a href="cli.html">CLI &amp; automation</a>
           <a href="faq.html">FAQ</a>
-          <a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Free download</a>
+          <a href="#downloads">Free download</a>
           <a href="#license">Pricing</a>
         </nav>
       </details>
@@ -226,8 +236,14 @@
         <div>
           <p class="eyebrow">Professional BRAW conversion</p>
           <h1 id="hero-title">From BRAW to delivery-ready files.</h1>
-          <p class="lead">HyperRAW converts Blackmagic RAW footage locally, quickly, and reliably—built for high-resolution batch workflows on Windows.</p>
-          <div class="tags" aria-label="Product highlights"><span class="tag">Windows 10 / 11</span><span class="tag">CUDA · OpenCL · CPU</span><span class="tag">NVIDIA · AMD · Intel</span></div>
+          <p class="lead">HyperRAW converts Blackmagic RAW footage locally, quickly, and reliably—built for high-resolution batch workflows on Windows and macOS.</p>
+          <div class="tags" aria-label="Product highlights"><span class="tag">Windows 10 / 11</span><span class="tag">macOS 13+ · Apple silicon</span><span class="tag">CUDA · OpenCL · Metal · CPU</span></div>
+          <div class="download-options" id="downloads" aria-label="Choose your platform">
+            <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download for Windows <small>2026.11.0 · x64 · .exe</small></a>
+            <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.2/HyperRAW-2026.11.2-macOS-arm64.dmg">Download for macOS <small>2026.11.2 · Apple silicon · .dmg</small></a>
+          </div>
+          <p class="hero-note"><b>Free forever:</b> every app start includes two successful UHD exports without a watermark—no account and no expiry.</p>
+          <p class="download-info">Unsigned builds. Windows SmartScreen or macOS Gatekeeper may show a warning. The Mac build is not notarized. <a href="#changelog">Release notes &amp; installation details</a></p>
           <div class="purchase-offer" aria-label="HyperRAW license offer">
             <p class="offer-sale" data-sale="singlesDay" hidden><strong>Singles’ Day: 11% off HyperRAW</strong><br>November 10, 11:00 AM – November 12, 1:00 PM, 2026 (CET). Enter code <code>SINGLESDAY26</code> at Gumroad checkout during the sale.</p>
             <p class="offer-sale" data-sale="blackFriday" hidden><strong>Black Friday: 25% off HyperRAW</strong><br>November 26–30, 2026 (CET). Automatically applied on Gumroad during the sale. Code: <code>BLACKFRIDAY26</code></p>
@@ -236,33 +252,40 @@
             </div>
             <p class="offer-tax"><strong>Price transparency:</strong> Gumroad displays the current price, calculates any location-dependent VAT or sales tax, and shows the final total before payment.</p>
           </div>
-          <div class="actions">
-            <a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download for Windows (.exe)</a>
-          </div>
-          <p class="hero-note">Version <b>2026.11.0</b> · Windows x64 · Direct installer download · <a href="#changelog">What’s new</a></p>
-          <p class="hero-note"><b>Free forever:</b> every app start includes two successful UHD exports without a watermark—no account and no expiry.</p>
-          <a class="cli-cta" href="cli.html"><span><b>CLI &amp; automation</b><small>Included with the Windows package</small></span><strong>For servers, scripts &amp; agentic workflows →</strong></a>
-          <div class="utility-links"><a href="what-is-a-braw-file.html">What is a BRAW file?</a><a href="faq.html">Read the FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
+          <a class="cli-cta" href="cli.html"><span><b>CLI &amp; automation</b><small>Included on Windows and macOS</small></span><strong>For servers, scripts &amp; agentic workflows →</strong></a>
+          <div class="utility-links"><a href="what-is-a-braw-file.html">What is a BRAW file?</a><a href="faq.html">Read the FAQ</a><a href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download Windows User Guide (PDF)</a><a href="mailto:HyperRAW.app@gmail.com">Contact support</a></div>
         </div>
-        <figure class="product-shot">
-          <img src="HyperRAW-2026-interface.png" alt="HyperRAW 2026 on Windows, showing the BRAW file queue and export settings" width="1556" height="1124">
-          <figcaption>Add clips, choose export settings, and convert in batches.</figcaption>
-        </figure>
+        <div class="hero-visual">
+          <aside class="platform-launch" aria-label="macOS release">
+            <p class="eyebrow">Two platforms. One workflow.</p>
+            <h2>Now on macOS.</h2>
+            <p>Apple silicon, Metal decoding, and native Apple ProRes.</p>
+            <a class="window-detail" href="braw-to-mp4.html#workflow" aria-label="See the full interface and conversion workflow"><img src="HyperRAW-macOS-Windows.png" alt="Close-up of the macOS and Windows HyperRAW title bars" width="1536" height="1024"></a>
+          </aside>
+        </div>
       </section>
 
       <section aria-labelledby="why-title">
         <div class="section-heading"><h2 id="why-title">A focused converter for demanding footage.</h2><p>Use HyperRAW for dedicated conversion and automation. Keep DaVinci Resolve for native BRAW editing, color, effects, audio, and finishing. <a href="hyperraw-and-davinci-resolve.html">See how the tools fit together.</a></p></div>
         <div class="features">
           <article class="card feature"><span class="feature-number">01</span><h3>Fast batch conversion</h3><p>Queue BRAW clips or folders and process your footage with settings applied consistently across the batch.</p></article>
-          <article class="card feature"><span class="feature-number">02</span><h3>Flexible hardware support</h3><p>Use CUDA on NVIDIA, OpenCL on compatible AMD, Intel, or NVIDIA hardware, or convert entirely on the CPU.</p></article>
+          <article class="card feature"><span class="feature-number">02</span><h3>Flexible hardware support</h3><p>Use CUDA or OpenCL on compatible Windows hardware, Metal on Apple silicon, or convert on the CPU.</p></article>
           <article class="card feature"><span class="feature-number">03</span><h3>Automation-ready</h3><p>The included command-line tool brings HyperRAW conversion to scripts, servers, and agentic media workflows.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="platform-title">
+        <div class="section-heading"><h2 id="platform-title">BRAW conversion for your setup.</h2><p>Choose a platform guide for installation, hardware options, export formats, and automation.</p></div>
+        <div class="platform-guides">
+          <a class="platform-guide" href="braw-converter-windows.html"><h3>BRAW conversion on Windows</h3><p>Windows 10/11 x64, CUDA and OpenCL decoding, encoder selection, and batch conversion from PowerShell.</p><span>Windows conversion guide →</span></a>
+          <a class="platform-guide" href="braw-converter-mac.html"><h3>BRAW conversion on Apple Mac</h3><p>Apple silicon, macOS 13+, Metal decoding, native Apple ProRes, and automation from Terminal.</p><span>Mac conversion guide →</span></a>
         </div>
       </section>
 
       <section id="license" aria-labelledby="license-title">
         <div class="section-heading"><h2 id="license-title">Free forever. Upgrade when the job gets bigger.</h2><p>Every app start includes two free UHD exports. Unlock the full workflow when you need uninterrupted batches or full resolution.</p></div>
         <div class="license-grid">
-          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">Free <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_Setup_2026.11.0_Winx64.exe">Download for Windows</a></article>
+          <article class="card license"><p class="plan-label">Free forever</p><h3>Try HyperRAW</h3><p class="price">Free <span>no expiry</span></p><ul><li>Two successful exports every app start</li><li>UHD output without a watermark</li><li>No account required</li></ul><a class="button" href="#downloads">Choose Windows or macOS</a></article>
           <article class="card license featured">
             <p class="plan-label">Full version</p>
             <h3>HyperRAW license</h3>
@@ -281,7 +304,13 @@
       </section>
 
       <section id="changelog" aria-labelledby="changelog-title">
-        <div class="section-heading"><h2 id="changelog-title">What’s new</h2><p>Latest HyperRAW release for Windows.</p></div>
+        <div class="section-heading"><h2 id="changelog-title">What’s new</h2><p>Current releases for Mac and Windows.</p></div>
+        <article class="card release">
+          <div class="release-header"><h3>HyperRAW 2026.11.2</h3><span>macOS · Apple silicon</span></div>
+          <ul><li>Available for Apple silicon Macs running macOS 13 or later, with Metal decoding and CPU fallback.</li><li>Native Apple ProRes exports and separately selectable FFmpeg software ProRes.</li><li>Fixed maximum-width limits in native ProRes exports and combinations of decode scaling and final resizing.</li><li>Trial watermark eligibility now uses the final output dimensions.</li></ul>
+          <p>Open the DMG and copy HyperRAW.app to Applications. This build is unsigned and not notarized; Gatekeeper may warn or block it from opening.</p>
+          <div class="actions"><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.2/HyperRAW-2026.11.2-macOS-arm64.dmg">Download for macOS (.dmg)</a><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/tag/v2026.11.2">Mac release notes &amp; checksums</a></div>
+        </article>
         <article class="card release">
           <div class="release-header"><h3>HyperRAW 2026.11.0</h3><span>Windows x64</span></div>
           <ul>
@@ -296,23 +325,23 @@
       </section>
 
       <section aria-labelledby="requirements-title">
-        <div class="section-heading"><h2 id="requirements-title">System requirements</h2><p>HyperRAW is currently available for Windows. macOS and Linux versions are planned.</p></div>
+        <div class="section-heading"><h2 id="requirements-title">System requirements</h2><p>Available for Windows x64 and Apple silicon Macs. Linux is planned.</p></div>
         <div class="requirements">
-          <article class="card requirement"><h3>Minimum</h3><p>Windows 10/11 · 4-core CPU · 8 GB RAM · SSD · GPU optional</p></article>
-          <article class="card requirement"><h3>Recommended</h3><p>Windows 11 · 8+ cores · 16–32 GB RAM · NVMe · dedicated GPU</p></article>
-          <article class="card requirement"><h3>High resolution</h3><p>32 GB+ RAM · fast NVMe storage · ample free space for source, output, and temporary files</p></article>
+          <article class="card requirement"><h3>Windows</h3><p>Windows 10/11 x64 · 4-core CPU · 8 GB RAM · SSD. CUDA and OpenCL are optional.</p></article>
+          <article class="card requirement"><h3>macOS</h3><p>macOS 13 or later · Apple silicon (arm64). Metal acceleration and CPU decoding are supported.</p></article>
+          <article class="card requirement"><h3>High-resolution workflows</h3><p>Recommended: 32 GB+ RAM and a fast SSD with ample space for source, output, and temporary files.</p></article>
         </div>
       </section>
 
       <section class="card support" aria-labelledby="support-title">
-        <div><h2 id="support-title">Questions before you start?</h2><p>Read the guide for formats and workflows, or email us if you need help choosing the right setup.</p><div class="actions"><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download User Guide (PDF)</a><a class="button primary" href="mailto:HyperRAW.app@gmail.com?subject=HyperRAW%20question">Email HyperRAW support</a></div></div>
+        <div><h2 id="support-title">Questions before you start?</h2><p>Read the guide for formats and workflows, or email us if you need help choosing the right setup.</p><div class="actions"><a class="button" href="https://github.com/louis-0hrs/HyperRAW/releases/download/v2026.11.0/HyperRAW_2026_User_Guide_EN.pdf">Download Windows User Guide (PDF)</a><a class="button primary" href="mailto:HyperRAW.app@gmail.com?subject=HyperRAW%20question">Email HyperRAW support</a></div></div>
       </section>
     </main>
 
   </div>
   <footer class="site-footer">
-    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows.</p></div>
-    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a></nav>
+    <div><strong>HyperRAW</strong><p>Local BRAW conversion for Windows and macOS.</p></div>
+    <nav class="site-footer-links" aria-label="Footer navigation"><a href="index.html">Product</a><a href="braw-to-mp4.html">BRAW converter</a><a href="what-is-a-braw-file.html">What is BRAW?</a><a href="hyperraw-and-davinci-resolve.html">Resolve workflow</a><a href="cli.html">CLI</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="privacy.html">Privacy</a><a href="legal.html">Legal</a><a href="braw-converter-windows.html">BRAW on Windows</a><a href="braw-converter-mac.html">BRAW on Mac</a></nav>
     <p class="site-footer-legal">Blackmagic RAW and BRAW are trademarks of Blackmagic Design Pty. Ltd. They are used here solely to identify format compatibility. HyperRAW is an independent product and is not affiliated with, sponsored by, certified by, or endorsed by Blackmagic Design.</p>
   </footer>
 
